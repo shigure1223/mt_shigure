@@ -1,13 +1,14 @@
 # Sources
-TEX_FILES = $(wildcard *.tex)
+TEX_FILES = $(wildcard **/*.tex)
 MAIN_TEX_FILE = main.tex
+FIGURES = $(wildcard figures/*.png)
 
 # Targets
 MAIN_PDF = $(MAIN_TEX_FILE:.tex=.pdf)
 
 all: $(MAIN_PDF)
 
-$(MAIN_PDF): $(TEX_FILES)
+$(MAIN_PDF): $(TEX_FILES) $(FIGURES)
 	lualatex $(MAIN_TEX_FILE)
 	biber $(MAIN_TEX_FILE:.tex=)
 	lualatex $(MAIN_TEX_FILE)

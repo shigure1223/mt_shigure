@@ -14,7 +14,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       # Fix the version to avoid breaking changes.
-      # You can use 'v3' to use the latest version on the v3.
     - uses: xu-cheng/latex-action@3.1.0
       with:
         root_file: main.tex
@@ -22,5 +21,5 @@ jobs:
     - name: Upload pdf
       uses: actions/upload-artifact@v3
       with:
-        name: ${{ github.sha }}.pdf
+        name: ${{ github.sha }}
         path: main.pdf
