@@ -8,11 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-      # Fix the version to avoid breaking changes.
-    - uses: xu-cheng/latex-action@3.1.0
+    - uses: xu-cheng/texlive-action@v2
       with:
-        root_file: main.tex
-        compiler: lualatex
+        scheme: full
+        run: |
+          apk add make
+          make main.pdf
     - name: Upload pdf
       uses: actions/upload-artifact@v3
       with:
