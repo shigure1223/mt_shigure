@@ -1,1 +1,1 @@
-# mt_wataru_sugiura
+# 杉浦航の修士論文
