@@ -8,7 +8,11 @@ MAIN_PDF = $(MAIN_TEX_FILE:.tex=.pdf)
 all: $(MAIN_PDF)
 
 main.pdf: $(TEX_FILES)
-	lualatex $(MAIN_TEX_FILE)
+	lualatex --interaction=nonstopmode $(MAIN_TEX_FILE)
 
 clean:
-	rm -f $(MAIN_PDF)
+	rm -f \
+		*.aux \
+		*.log \
+		*.toc \
+		*.pdf
