@@ -13,10 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: Build pdf
-      uses: docker://ghcr.io/latex-lsp/texlive-full:latest
+    - uses: xu-cheng/latex-action@v3
       with:
-        args: lualatex -interaction=nonstopmode -halt-on-error -file-line-error -synctex=1 -output-format=pdf main.tex
+        root_file: main.tex
     - name: Upload pdf
       uses: actions/upload-artifact@v3
       with:
