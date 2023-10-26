@@ -3,6 +3,11 @@
 \usepackage{luatexja-fontspec}
 \usepackage[ipa]{luatexja-preset}
 
+% 参考文献リストの設定
+% 参考文献はreferences.bibに記述する
+\usepackage[backend=biber]{biblatex}
+\addbibresource{references.bib}
+
 \title{温度感受性イオンチャネルタンパク質の物性と分子機能}
 \author{名古屋大学理学研究科理学専攻\\杉浦航}
 \date{\today}
@@ -33,5 +38,11 @@
 
 \chapter{結論}
 \include{conclusion}
+
+\chapter{謝辞}
+\include{acknowledgement}
+
+% 参考文献
+\printbibliography[title=参考文献]
 
 \end{document}

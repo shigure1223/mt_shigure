@@ -1,4 +1,9 @@
 *.aux
 *.log
-*.pdf
 *.toc
+*.pdf
+*.bcf
+*.xml
+*-blx.bib
+*.bbl
+*.blg
