@@ -1,9 +1,37 @@
-\documentclass{ltjsarticle}
+\documentclass{ltjsreport}
 
 \usepackage{luatexja-fontspec}
 \usepackage[ipa]{luatexja-preset}
 
+\title{温度感受性イオンチャネルタンパク質の物性と分子機能}
+\author{名古屋大学理学研究科理学専攻\\杉浦航}
+\date{\today}
+
 \begin{document}
-\section{最初のセクション}
-これは最初のセクションです。
+
+% 表紙
+\maketitle
+
+\chapter*{概要}
+\include{abstract}
+
+% 目次
+\tableofcontents
+\clearpage
+
+\chapter{序論}
+\include{introduction}
+
+\chapter{材料と方法}
+\include{methods}
+
+\chapter{結果}
+\include{results}
+
+\chapter{考察}
+\include{discussion}
+
+\chapter{結論}
+\include{conclusion}
+
 \end{document}
