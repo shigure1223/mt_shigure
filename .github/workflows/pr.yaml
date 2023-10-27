@@ -8,5 +8,3 @@ on:
 jobs:
   auto-merge-update-bib:
     uses: yamatolab/wf-update-bibliography/.github/workflows/merge_pr.yaml@main
-    secrets:
-      github_token: ${{ secrets.GITHUB_TOKEN }}
