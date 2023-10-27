@@ -1,0 +1,14 @@
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 */12 * * *'
+
+jobs:
+  update_bibliography:
+    uses: yamatolab/wf-update-bibliography/.github/workflows/update_bibliography.yaml@main
+    with:
+      zotero_group_id: ${{ vars.ZOTERO_GROUP_ID }}
+      bibliography_file: references.bib
+    secrets:
+      zotero_api_key: ${{ secrets.ZOTERO_API_KEY }}
+      pat_for_create_pr: ${{ secrets.PAT_FOR_CREATE_PR }}
