@@ -1,3 +1,5 @@
+name: Update bibliography
+
 on:
   workflow_dispatch:
   schedule:
