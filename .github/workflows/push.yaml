@@ -10,6 +10,8 @@ on:
 jobs:
   build:
     uses: ./.github/workflows/builder.yaml
+    with:
+      built_artifact_name: "built-contents-${{ github.sha }}"
 
   deploy:
     runs-on: ubuntu-latest
@@ -18,7 +20,7 @@ jobs:
       - name: Download built artifacts
         uses: actions/download-artifact@v3
         with:
-          name: built_contents
+          name: "built-contents-${{ github.sha }}"
           path: ./dist
       - name: Release
         uses: softprops/action-gh-release@v1
