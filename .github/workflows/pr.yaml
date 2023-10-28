@@ -6,5 +6,8 @@ on:
       - main
 
 jobs:
+  build:
+    uses: ./.github/workflows/builder.yaml
   auto-merge-update-bib:
+    needs: build
     uses: yamatolab/wf-update-bibliography/.github/workflows/merge_pr.yaml@main
