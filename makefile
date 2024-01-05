@@ -9,10 +9,10 @@ MAIN_PDF = $(MAIN_TEX_FILE:.tex=.pdf)
 all: $(MAIN_PDF)
 
 $(MAIN_PDF): $(TEX_FILES) $(FIGURES)
-	lualatex $(MAIN_TEX_FILE)
+	lualatex --interaction=nonstopmode $(MAIN_TEX_FILE)
 	biber $(MAIN_TEX_FILE:.tex=)
-	lualatex $(MAIN_TEX_FILE)
-	lualatex $(MAIN_TEX_FILE)
+	lualatex --interaction=nonstopmode $(MAIN_TEX_FILE)
+	lualatex --interaction=nonstopmode $(MAIN_TEX_FILE)
 
 clean:
 	rm -f \
