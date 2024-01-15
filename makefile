@@ -8,7 +8,7 @@ MAIN_PDF = $(MAIN_TEX_FILE:.tex=.pdf)
 
 all: $(MAIN_PDF)
 
-$(MAIN_PDF): $(TEX_FILES) $(FIGURES)
+$(MAIN_PDF): $(MAIN_TEX_FILE) $(TEX_FILES) $(FIGURES)
 	lualatex --interaction=nonstopmode $(MAIN_TEX_FILE)
 	biber $(MAIN_TEX_FILE:.tex=)
 	lualatex --interaction=nonstopmode $(MAIN_TEX_FILE)
