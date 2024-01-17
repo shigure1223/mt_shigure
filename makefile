@@ -2,13 +2,14 @@
 TEX_FILES = $(wildcard **/*.tex)
 MAIN_TEX_FILE = main.tex
 FIGURES = $(wildcard figures/*.png)
+BIB_FILE = references.bib
 
 # Targets
 MAIN_PDF = $(MAIN_TEX_FILE:.tex=.pdf)
 
 all: $(MAIN_PDF)
 
-$(MAIN_PDF): $(MAIN_TEX_FILE) $(TEX_FILES) $(FIGURES)
+$(MAIN_PDF): $(MAIN_TEX_FILE) $(TEX_FILES) $(FIGURES) $(BIB_FILE)
 	lualatex --interaction=nonstopmode $(MAIN_TEX_FILE)
 	biber $(MAIN_TEX_FILE:.tex=)
 	lualatex --interaction=nonstopmode $(MAIN_TEX_FILE)
