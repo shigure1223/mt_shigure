@@ -1,4 +1,11 @@
 {
-    "editor.tabSize": 2,
-    "zotero.latexCommand": "autocite"
+  "editor.tabSize": 2,
+  "zotero.latexCommand": "autocite",
+  "files.exclude": {
+    "*.aux": true,
+    "*.bbl": true,
+    "*.bcf": true,
+    "*.blg": true,
+    "*.toc": true,
+  }
 }
