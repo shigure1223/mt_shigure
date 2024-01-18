@@ -7,6 +7,9 @@ BIB_FILE = references.bib
 # Targets
 MAIN_PDF = $(MAIN_TEX_FILE:.tex=.pdf)
 
+# If DRAFT is set to 1, the draft mode will be enabled
+export DRAFT := 0
+
 all: $(MAIN_PDF)
 
 $(MAIN_PDF): $(MAIN_TEX_FILE) $(TEX_FILES) $(FIGURES) $(BIB_FILE)

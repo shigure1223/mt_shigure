@@ -1,14 +1,31 @@
-\documentclass{ltjsreport}
+\documentclass[a4paper, 14pt]{ltjsreport}
 
 \usepackage{luatexja-fontspec}
 \usepackage[ipa]{luatexja-preset}
 
 \usepackage{graphicx}
+\usepackage{ifthen}
 
 % 参考文献リストの設定
 % 参考文献はreferences.bibに記述する
 \usepackage[backend=biber,style=phys]{biblatex}
 \addbibresource{references.bib}
+
+% ハイパーリンクの設定
+\ifthenelse{
+  \equal{\directlua{tex.sprint(os.getenv("DRAFT"))}}{1}
+}{
+  \usepackage[%
+  luatex,%
+  pdfencoding=auto,%
+  colorlinks=true,%
+  ]{hyperref}
+}{
+  \usepackage[%
+  luatex,%
+  pdfencoding=auto,%
+  ]{hyperref}
+}
 
 \title{温度感受性イオンチャネルタンパク質の物性と分子機能}
 \author{名古屋大学理学研究科理学専攻\\杉浦航}
