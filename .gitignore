@@ -1,9 +1,10 @@
 *.aux
-*.log
-*.toc
-*.pdf
+*.bbl
 *.bcf
+*.blg
+*.log
+*.out
+*.toc
 *.xml
 *-blx.bib
-*.bbl
-*.blg
+*.pdf
