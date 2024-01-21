@@ -29,8 +29,3 @@ clean:
 		*-blx.bib \
 		*.bbl \
 		*.blg
-
-# Utilities
-
-update_bib:
-	gh workflow run update_bib.yaml
