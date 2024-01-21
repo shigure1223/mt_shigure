@@ -14,3 +14,45 @@
 %   - equilibration
 %   - production
 %   - NVE
+
+% アウトライン
+% - 熱伝導度の理論を説明する
+%   - 熱伝導度の計算方法を説明する
+% - 熱伝導度を計算するための準備としての、分子動力学シミュレーションの方法を説明する
+%   - エネルギー最小化
+%   - 熱平衡化
+%   - sampling
+%   - NVE
+
+\section{熱伝導度の解析}
+
+
+
+\section{分子動力学シミュレーション}
+
+熱伝導度を計算するためには、NVEアンサンブルでの分子動力学シミュレーションを行う必要がある。
+そのため本研究では、モデリング、構造最適化、熱平衡化、サンプリング、解析の5つのステップを踏んで熱伝導度の計算を行った。
+
+\subsection{モデリング}
+開構造として7MIO、% FLOW_ID = 13, structure_id = 11
+閉構造として7MIN  % FLOW_ID = 11, structure_id = 9 
+を用いた。\autocite{noauthor_7mio_nodate, noauthor_7min_nodate, nadezhdinStructuralMechanismHeatinduced2021}
+それぞれの構造について、CHARMM-GUIのInput generator\autocite{jo_charmmgui_2008, lee_charmm-gui_2016}を用いて、リン脂質二重膜にタンパク質を挿入して、シミュレーションボックスを作成した。
+なお、今後開構造の7MIOを「\openFortyTwo」、閉構造の7MINを「\closeFortyTwo」と呼ぶことにする。
+
+CHARMM-GUIを用いて、次のように系を作成した。
+まず、\openFortyTwo は残基番号77から112までの残基はモデリングされていなかったため、残基番号113以降の構造情報のみを用いた。
+次に、PDBデータに含まれていたタンパク質以外の分子についてはあらかじめすべて除去した。
+また、両方のモデルについて共通して構造に水素原子の情報は含まれていないため、タンパク質に水素原子を付与した。
+続けて、作成したモデルをリン脂質二重層に挿入した。
+脂質二重層の構成分子は、\molNamePOPC (POPC)、\molNamePOPE (POPE)、\molNameCHOL (CHOL)を使い、これらの分子をPOPC:POPE:CHOL=2:1:1の比率で混合した。
+最後に、水分子とNaClイオンを加えて系の電荷を中和した。NaClイオンは0.15 Mの濃度になるように追加した。
+% メモ: 脂質の名前に自信がない。
+% メモ: newcommandで定義しているので、後で変更するときは定義場所だけ変更すればよい。
+% POPC
+%  - 1-palmitoyl-2-oleoyl-sn-glycero-3-phosphocholine, https://en.wikipedia.org/wiki/POPC
+% POPE
+%  - 1-palmitoyl-2-oleoyl-sn-glycero-3-phosphoethanolamine, https://avantilipids.com/product/850757
+%  - palmitoyloleoyl-phosphatidylethanolamine, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1305115/
+%  - 1-Palmitoyl-2-oleoylphosphatidylethanolamine, https://pubchem.ncbi.nlm.nih.gov/compound/1-Palmitoyl-2-oleoylphosphatidylethanolamine
+%  - 1-palmitoyl-2-oleoyl-phosphatidylethanolamine, https://pubs.acs.org/doi/10.1021/bi060937y
