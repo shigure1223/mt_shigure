@@ -26,8 +26,6 @@
 
 \section{熱伝導度の解析}
 
-
-
 \section{分子動力学シミュレーション}
 
 熱伝導度を計算するためには、NVEアンサンブルでの分子動力学シミュレーションを行う必要がある。
@@ -43,10 +41,8 @@
 CHARMM-GUIを用いて、次のように系を作成した。
 まず、\openFortyTwo は残基番号77から112までの残基はモデリングされていなかったため、残基番号113以降の構造情報のみを用いた。
 次に、PDBデータに含まれていたタンパク質以外の分子についてはあらかじめすべて除去した。
-また、両方のモデルについて共通して構造に水素原子の情報は含まれていないため、タンパク質に水素原子を付与した。
+また、両方のモデルについて、タンパク質分子に対して pH 7.0 でプロトン化した。
 続けて、作成したモデルをリン脂質二重層に挿入した。
-脂質二重層の構成分子は、\molNamePOPC (POPC)、\molNamePOPE (POPE)、\molNameCHOL (CHOL)を使い、これらの分子をPOPC:POPE:CHOL=2:1:1の比率で混合した。
-最後に、水分子とNaClイオンを加えて系の電荷を中和した。NaClイオンは0.15 Mの濃度になるように追加した。
 % メモ: 脂質の名前に自信がない。
 % メモ: newcommandで定義しているので、後で変更するときは定義場所だけ変更すればよい。
 % POPC
@@ -56,3 +52,74 @@ CHARMM-GUIを用いて、次のように系を作成した。
 %  - palmitoyloleoyl-phosphatidylethanolamine, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1305115/
 %  - 1-Palmitoyl-2-oleoylphosphatidylethanolamine, https://pubchem.ncbi.nlm.nih.gov/compound/1-Palmitoyl-2-oleoylphosphatidylethanolamine
 %  - 1-palmitoyl-2-oleoyl-phosphatidylethanolamine, https://pubs.acs.org/doi/10.1021/bi060937y
+脂質二重層の構成分子は、\molNamePOPC (POPC)、\molNamePOPE (POPE)、\molNameCHOL (CHOL)を使い、これらの分子をPOPC:POPE:CHOL=2:1:1の比率で混合した。
+最後に、水分子とNaClイオンを加えて系の電荷を中和した。NaClイオンは0.15 Mの濃度になるように追加した。
+シミュレーションパッケージAMBER 22\autocite{case_amber_2023}を使ったため、ポテンシャル関数としてAMBER\autocite{pearlman_amber_1995}を利用した。
+ポテンシャル関数の各パラメータは、
+タンパク質の原子にはff19SB\autocite{tian_ff19sb_2020}、
+脂質の原子にはLipid21\autocite{dickson_lipid21_2022}、
+水分子にはOPC水モデル\autocite{izadi_building_2014}を用いた。
+系には3次元の周期境界条件を設定した。
+系を作成した後の系の大きさを表\ref{tab:system_size}に示す。
+
+\begin{table}[!ht]
+  \centering
+  \caption{シミュレーションに用いた系の大きさ}
+  \begin{tabular}{lll}
+    \hline
+    モデル名        & 原子数  & ボックスの大きさ(x, y, z) \\
+    \hline 
+    \openFortyTwo  & 1183281 & 250.19627, 250.19627, 161.529 \\ 
+    \closeFortyTwo & 1206767 & 250.14921, 250.14921, 164.691 \\ 
+  \end{tabular}
+  \label{tab:system_size}
+\end{table}
+
+\subsection{シミュレーション}
+作成したモデルは、以下の手続きによりシミュレーションを行った。シミュレーションには、Particle Mesh Ewald法を用いた。
+% 粒子として取り扱う距離を cut = 9 [A]とした。
+
+はじめに、構造最適化を行った。構造最適化は3つのステップに分けて行った。
+最初のステップでは、水以外の原子に対してrestraintをかけて、水の構造、並びを最適化した。
+次のステップでは、タンパク質の原子に対してrestraintをかけて、水と脂質の構造を最適化した。
+最後のステップでは、すべてのrestraintを外して、全体の構造を最適化した。
+各ステップにおいて、最初の2500ステップで再急降下法によるエネルギー最小化を行い、次の2500ステップで共役勾配法によるエネルギー最小化を行った。
+
+次に、熱平衡化を行った。
+熱平衡化は大きく分けて2つのステップに分けて行った。
+% 1. T = 10K で開始。NVT. 初期速度はマクスウェル分布で与える。1.mdinと2.mdinを使って、dt = 1 fsで125000 + 125000 = 250 psのシミュレーションの中で10 K -> 300Kまで上げる。
+% 2. NPgT. 125000 steps, dt = 1 fs. 3.mdin
+% 3. NPgT. 250000 steps, dt = 2 fs. 4.mdin
+% 4. 
+初めに、NVTアンサンブルで系の温度を上げた。初期速度は温度$T = 10 \rm{[K]}$のマクスウェル分布に従って与え、250 $\rm{ps}$で温度を$T = 315.15 \rm{[K]}$まで上昇させた。
+次に、NP\gamma Tアンサンブルで平衡化を行った。
+NP\gamma Tアンサンブルでは、温度、膜の表面張力、系の総数が一定になるようにシミュレーションを行う。% TODO: NPgTの説明を書く
+詳細なシミュレーション条件は、表\ref{tab:simulation_condition}に示す。
+
+% TODO: restraintについて記述する。
+\begin{table}[!ht]
+  \centering
+  \caption{シミュレーション条件}
+  \begin{tabular}{lllll}
+    \hline
+    ステップ & \Delta t [fs] & 時間 [ps] & アンサンブル & 温度 [T] \\
+    \hline
+    1       & 1              & 125       & NVT         & 10 $\rightarrow$ 100 \\
+    2       & 1              & 125       & NVT         & 100 $\rightarrow$ 315.15 \\
+    3       & 1              & 125       & NP\gamma T  & 315.15 \\
+    4       & 2              & 500       & NP\gamma T  & 315.15 \\
+    5       & 2              & 500       & NP\gamma T  & 315.15 \\
+    6       & 2              & 500       & NP\gamma T  & 315.15 \\
+  \end{tabular}
+  \label{tab:simulation_condition}
+\end{table}
+
+続いて、NP\gamma Tシミュレーションによるサンプリングを行った。
+熱平衡化の最後のステップと同じ、ただしrestraintを外した状態で10 nsのシミュレーションを実行した。
+最後の5 nsの中で、各500 psごとに座標と速度を保存し、次のNVEのシミュレーションの初期状態として用いた。
+
+最後にNVEシミュレーションによるサンプリングを行った。
+初期状態として、NP\gamma Tシミュレーションによるサンプリングで得られた座標と速度を用いた。
+保存した座標と速度のうち、5つを使って\Delta t = 1 fs、1 nsのシミュレーションを実行した。
+シミュレーション中、各10 fsごとに座標と速度を保存した。
+このシミュレーションで保存した座標と速度の情報を用いて熱流を計算した。
