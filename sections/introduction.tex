@@ -50,8 +50,7 @@ TRPV3は他のTRPチャネルに対して特異的な点として、温度刺激
 \autocite{peier_heat-sensitive_2002,chung_2-aminoethoxydiphenyl_2004,liu_hysteresis_2011}
 
 % 機能と構造について説明
-TRPV3はxxxx個のアミノ酸残基で構成されており、膜タンパク質であり、ホモ4量体を形成する。(図\ref{fig:trpv3})% TODO: ここに構造の画像を入れる
-200xヒトゲノムをTRPV1で検索した際に発見された。% TODO: いつ？
+TRPV3は単量体は790個程度のアミノ酸残基で構成された膜タンパク質であり、ホモ4量体を形成する。(図\ref{fig:trpv3})
 
 \begin{figure}
   \centering
@@ -61,6 +60,7 @@ TRPV3はxxxx個のアミノ酸残基で構成されており、膜タンパク�
     \label{fig:trpv3}
   \end{subfigure}
   \begin{subfigure}{0.4\textwidth}
+    % FIXME: もっといいアングルや脂質を含めた様子がほしい。
     \includegraphics[width=\textwidth]{trpv3_angle}
     \label{fig:trpv3_angle}
   \end{subfigure}
@@ -68,12 +68,41 @@ TRPV3はxxxx個のアミノ酸残基で構成されており、膜タンパク�
   \label{fig:trpv3_structures}
 \end{figure}
 
-また、原子数が大きいためクライオ電子顕微鏡が登場するまでは一部のドメインのみの構造解析  に, とどまっていたが、
+残基数が多く構造が大きいためクライオ電子顕微鏡が登場するまでは一部のドメインのみの構造解析にとどまっていたが、
 % https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22type%22%3A%22group%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22group%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22group%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22full_text%22%2C%22parameters%22%3A%7B%22value%22%3A%22TRPV3%22%7D%7D%2C%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22full_text%22%2C%22parameters%22%3A%7B%22value%22%3A%22TRPV%203%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%7D%2C%7B%22type%22%3A%22group%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22group%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22group%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22text%22%2C%22parameters%22%3A%7B%22attribute%22%3A%22exptl.method%22%2C%22value%22%3A%22ELECTRON%20MICROSCOPY%22%2C%22operator%22%3A%22exact_match%22%7D%7D%5D%2C%22logical_operator%22%3A%22or%22%2C%22label%22%3A%22exptl.method%22%7D%5D%2C%22logical_operator%22%3A%22and%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22text%22%7D%5D%2C%22logical_operator%22%3A%22and%22%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22rcsb_accession_info.initial_release_date%22%2C%22direction%22%3A%22asc%22%7D%5D%2C%22scoring_strategy%22%3A%22combined%22%7D%2C%22request_info%22%3A%7B%22query_id%22%3A%227341f71e2e418e1c5dd1cf5281aa6898%22%7D%7D
 % これ https://www.nature.com/articles/s41594-018-0108-7 が初出のはず。1,2月後にこの論文だけciteしてる悔しい論文があった。
 % 最新の研究は2023年9月に発表されていたので、現在進行形でいいと思う。
 2018年にクライオ電子顕微鏡法を用いて全長構造の構造解析が行われた\autocite{singhStructureGatingMechanism2018,zubcevic_conformational_2018}ことを皮切りに構造解析の研究が進んでいる。
 
+% 機能と構造の関係について
+
+
 \section{計算手法}
 % - 熱伝導度と熱流について述べる
+本研究では、先行研究が示したEEN、\Delta EEN、r\Delta EENの概念\autocite{ishikuraEnergyExchangeNetwork2015,ota_energy_2019,poudel_energy_2022}を応用して、TRPV3の活性化と調節における構造的および機能的ダイナミクスを明らかにする。
+そこで、EENの熱流版として熱流ネットワークをグラフで定義する。
+グラフのノードを残基、エッジを熱のやり取りが行われる非共有結合を介した接触として定義する。
+ここで、残基同士が接触しているとする基準は、残基同士の最近接距離が6.0 \AA 以下であることとした。
 
+% TODO: 現在プレースホルダとして適当に書いている。
+% TODO: 本当に適当なので、なんとかしたい。
+
+熱伝導度$\lambda$は平衡状態においてこのように書ける。
+
+\begin{equation}
+  \label{eq:thermal_conductivity}
+  \lambda = \frac{1}{3Vk_B T^2} \int_{0}^{\infty} \left\langle
+    \bm{h}(0) \cdot \bm{h}(t)
+  \right\rangle dt
+\end{equation}
+
+熱流$\mathbf{h}$をこう定義する。
+
+\begin{equation}
+  \label{eq:heat_flow}
+  \bm{h} \equiv \frac{d}{dt} \left\{
+    \sum_{i=1}^{N} \bm{r}_i \cdot E_i
+  \right\} = \sum_{i=1}^{N} \left\{
+    \frac{d\bm{r_i}}{dt}E_i + \bm{r_i}\frac{dE_i}{dt}
+  \right\}
+\end{equation}
