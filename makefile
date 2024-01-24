@@ -12,11 +12,17 @@ export DRAFT := 0
 
 all: $(MAIN_PDF)
 
-$(MAIN_PDF): $(MAIN_TEX_FILE) $(TEX_FILES) $(FIGURES) $(BIB_FILE)
+$(MAIN_PDF): $(MAIN_TEX_FILE) $(TEX_FILES) $(BIB_FILE)
 	lualatex --interaction=nonstopmode $(MAIN_TEX_FILE)
 	biber $(MAIN_TEX_FILE:.tex=)
 	lualatex --interaction=nonstopmode $(MAIN_TEX_FILE)
 	lualatex --interaction=nonstopmode $(MAIN_TEX_FILE)
+
+# Figures
+figures/trpv3.png: scripts/draw_trpv3.py
+	python $< $@
+figures/trpv3_angle.png: scripts/draw_trpv3_angle.py
+	python $< $@
 
 clean:
 	rm -f \
