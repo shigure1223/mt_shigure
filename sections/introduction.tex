@@ -21,7 +21,26 @@
 
 \section{はじめに}
 
-\section{TRPV3チャネル}
+生物は外部からの刺激に対して、温度変化に敏感に反応し、これに対応することで生存に必要な生理機能を維持している。
+
+TRPチャネルは、物質、温度、浸透圧の変化などを受け取り、細孔を開閉することによって細胞内外のイオンの流れを制御する膜タンパク質である。
+TRPチャネルは、特に温度の変化を感受するものがあるという点で、他のイオンチャネルとは異なる。
+TRPチャネルのとりわけTRPVチャネルは、温度に応答する特異性から刺激に対する応答と構造の関係性が明らかにされており、
+複数のドメインが相互作用して機能することが知られている。
+しかし、これら複数のドメインがどのように相互作用して機能するのかは、未だに解明されていない。
+
+本研究では、ドメイン間の相互作用を調べるために、閉じた状態と開いた状態において熱流解析を行った。
+熱流解析以前にエネルギー流を用いたEnergy Exchange Networkというモデルが提案されており、
+本研究はこの考えを熱流解析にも適応した。
+
+本論文の構成は以下の通りである。
+はじめに、\ref{sec:trpv3}節で本研究が対象とする物質であるTRPV3チャネルについて詳しく述べた。
+次に\ref{sec:information_transmission}節で本研究が参考としたモデルであるEnergy Exchange Networkについて説明した。
+\ref{chap:methods}章以降は、本研究で行ったシミュレーションの方法と結果、考察をまとめる。
+
+\newpage
+
+\section{TRPV3チャネル}\label{sec:trpv3}
 % まずTRPチャネルとTRPVチャネルについてそれぞれ1パラグラフ程度で説明した後、TRPV3チャネルについて説明する。
 % TRPチャネル
 TRPV3チャネルはTRP（Transient Receptor Potential）チャネル、その中でもTRPVチャネルの一種である。
@@ -31,7 +50,7 @@ TRPチャネルはカチオンチャネルのスーパーファミリーで、�
 % FIXME: TRPVの歴史について記述
 % FIXME: TRPV5,6についても書く
 TRPVチャネルファミリーはTRPV1,2,3,4,5,6に分類されており、
-そのうち1-4は感知する温度や温度に対する応答が異なるものの、温度感知性を持つ。\autocite{baylie_trpv_2011}
+そのうち1-4はThermo-TRPとも呼ばれ、感知する温度や温度に対する応答が異なるものの、温度感知性を持つ。\autocite{baylie_trpv_2011}
 
 % TRPV3チャネル概要
 その中でもTRPV3チャネルは、温度T = 36-39℃で活性化する温度感知性を持つ。\autocite{baylie_trpv_2011,xuTRPV3CalciumpermeableTemperaturesensitive2002}
@@ -46,7 +65,7 @@ TRPV3は構造が明らかになる前から、活性・非活性を膜間を流
 \autocite{smithTRPV3TemperaturesensitiveVanilloid2002,xuTRPV3CalciumpermeableTemperaturesensitive2002,nadezhdinStructuralMechanismHeatinduced2021,chung_2-aminoethoxydiphenyl_2004}
 % FIXME: 本当はTRPV3の性質についてもう少し詳しく書きたい。
 % FIXME: 時間があればパラグラフを分けてもいい。
-TRPV3は他のTRPチャネルに対して特異的な点として、温度刺激を繰り返し与えることによりイオンチャネルとしての活性が高まる。
+TRPV3は他のTRPチャネルに対して、温度刺激を繰り返し与えることによりイオンチャネルとしての活性が高まるという特性がある。
 \autocite{peier_heat-sensitive_2002,chung_2-aminoethoxydiphenyl_2004,liu_hysteresis_2011}
 
 % 機能と構造について説明
@@ -77,7 +96,7 @@ TRPV3は単量体は790個程度のアミノ酸残基で構成された膜タン
 % 機能と構造の関係について
 % TODO: 絶対書く
 
-\section{情報伝達}
+\section{情報伝達}\label{sec:information_transmission}
 % EEN等の先行研究を紹介する。
 タンパク質にはリガンドの結合やレセプターへの刺激を受け取ると、構造変化を起こしたり構造をそのままに機能が活性するものが知られている。
 これらのタンパク質は、しばしば医学や創薬などのために研究されている。
