@@ -64,7 +64,9 @@
   \frac{dE_i}{dt} = \sum_{j=1}^{N} \frac{1}{2} \bf{F}_{ij} \cdot (\bf{v}_i + \bf{v}_j)
 \end{equation}
 
-と展開できる\autocite{leitner_mapping_2018}、また、$\frac{d\bm{r_i}}{dt}E_{i}$が十分小さいと仮定すれば、式\ref{eq:heat_flow}は次のように変形できる。\autocite{yamatoComputationalStudyThermal2022,oai:nagoya.repo.nii.ac.jp:02007698}
+と展開できる\autocite{leitner_mapping_2018}。
+また、タンパク質中の原子の運動は著しく制限されるため$\frac{d\bm{r_i}}{dt}E_{i}$が十分小さいと考えて無視すれば、
+式\ref{eq:heat_flow}は次のように変形できる。\autocite{yamatoComputationalStudyThermal2022,oai:nagoya.repo.nii.ac.jp:02007698}
 
 \begin{align}
   % \label{eq:heat_flow_expanded}
@@ -72,14 +74,20 @@
               \bm{r_i}\sum_{j=1, j \neq i }^{N} \frac{1}{2} \bf{F}_{ij} \cdot (\bf{v}_i + \bf{v}_j)
             \right\} \\
          &= \sum_{i=1}^{N} \sum_{j>i}^{N}
-              (\bm{r_i} - \bm{r_j}) \frac{1}{2} \bf{F}_{ij} \cdot (\bf{v}_i + \bf{v}_j)
+              (\bm{r_i} - \bm{r_j}) \frac{1}{2} \bf{F}_{ij} \cdot (\bf{v}_i + \bf{v}_j) \\
          &= \sum_{(i, j)}
-              (\bm{r_i} - \bm{r_j}) \frac{1}{2} \bf{F}_{ij} \cdot (\bf{v}_i + \bf{v}_j)
+              (\bm{r_i} - \bm{r_j}) \frac{1}{2} \bf{F}_{ij} \cdot (\bf{v}_i + \bf{v}_j) \\
+         &= \sum_{(i, j)}
+              \bm{h}_{ij}
 \end{align}
 
 ここで、一行目から二行目への式変形には $\bf{F}_{ij} = - \bf{F}_{ij}$を用いた。
+ここで得られた熱流$\bm{h}_{ij}$を使い、残基A、B間の熱流$\bm{h}{AB}$を次のように定義する。
 
-最後に、
+\begin{equation}
+  \label{eq:heat_flow_between_residues}
+  \bm{h}_{AB} = \sum_{\substack{(i, j) \\ i \in \rm{A}, j \in \rm{B}}} \bm{h}_{ij}
+\end{equation}
 
 \section{分子動力学シミュレーション}
 
@@ -182,10 +190,9 @@ NP\gamma Tアンサンブルでは、温度、膜の表面張力、系の総数�
 
 NVEシミュレーションによって得られたトラジェクトリを用いて、熱伝導度を計算した。
 熱伝導度の計算には、CURP\autocite{ishikura_energy_2015,ota_energy_2019,yamatoComputationalStudyThermal2022,wangSiteselectiveHeatCurrent2023} を用いた。
-なお、今回の研究を遂行するにあたり、熱流の計算速度を改善する必要があったため、改良を施した。改良方法については、\ref{sec:curp}節で述べる。
 
 
+なお、今回の研究を遂行するにあたり、熱流の計算速度を改善する必要があったため、改良を施したので次節で述べる。
 
 \subsection{CURPの改良}\label{sec:curp}
 
-TBW
