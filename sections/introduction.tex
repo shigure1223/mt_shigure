@@ -75,19 +75,23 @@ TRPV3は単量体は790個程度のアミノ酸残基で構成された膜タン
 2018年にクライオ電子顕微鏡法を用いて全長構造の構造解析が行われた\autocite{singhStructureGatingMechanism2018,zubcevic_conformational_2018}ことを皮切りに構造解析の研究が進んでいる。
 
 % 機能と構造の関係について
+% TODO: 絶対書く
 
+\section{情報伝達}
+% EEN等の先行研究を紹介する。
 
 \section{計算手法}
 % - 熱伝導度と熱流について述べる
-本研究では、先行研究が示したEEN、\Delta EEN、r\Delta EENの概念\autocite{ishikuraEnergyExchangeNetwork2015,ota_energy_2019,poudel_energy_2022}を応用して、TRPV3の活性化と調節における構造的および機能的ダイナミクスを明らかにする。
-そこで、EENの熱流版として熱流ネットワークをグラフで定義する。
-グラフのノードを残基、エッジを熱のやり取りが行われる非共有結合を介した接触として定義する。
-ここで、残基同士が接触しているとする基準は、残基同士の最近接距離が6.0 \AA 以下であることとした。
+本研究では、先行研究が示したEEN、\Delta EEN、r\Delta EENの概念\autocite{ishikuraEnergyExchangeNetwork2015,ota_energy_2019,poudel_energy_2022}を
+熱流解析に応用して、TRPV3の活性化と調節における構造的および機能的ダイナミクスを明らかにする。
+なお、本研究の目的を達成するには熱流にこだわらずEnergy fluxやエネルギー伝導度を用いた方法を用いてもよいが
+熱流から計算される熱伝導度は、実験的に測定することができるというメリットがあるため、本研究では熱流を用いた手法を用いることにした。
 
-% TODO: 現在プレースホルダとして適当に書いている。
-% TODO: 本当に適当なので、なんとかしたい。
+先行研究でエネルギー流ではなくエネルギー伝導度を用いていたことにならい、本研究でも熱流ではなく熱伝導度を用いて解析した。
+ここで、熱伝導度と熱流について簡単に説明する。
 
-熱伝導度$\lambda$は平衡状態においてこのように書ける。
+% TODO: 改善。
+熱伝導度$\lambda$は平衡状態において。
 
 \begin{equation}
   \label{eq:thermal_conductivity}
@@ -95,6 +99,8 @@ TRPV3は単量体は790個程度のアミノ酸残基で構成された膜タン
     \bm{h}(0) \cdot \bm{h}(t)
   \right\rangle dt
 \end{equation}
+
+ここで$\mathbf{h}$は熱流を表す。\autocite{mcquarrie_statistical_2000}
 
 熱流$\mathbf{h}$をこう定義する。
 
@@ -106,3 +112,27 @@ TRPV3は単量体は790個程度のアミノ酸残基で構成された膜タン
     \frac{d\bm{r_i}}{dt}E_i + \bm{r_i}\frac{dE_i}{dt}
   \right\}
 \end{equation}
+
+ここで、右辺の $\frac{dE_i}{dt}$は
+
+\begin{equation}
+  \label{time_derivative_of_energy}
+  \frac{dE_i}{dt} = \sum_{j=1}^{N} \frac{1}{2} \bf{F}_{ij} \cdot (\bf{v}_i + \bf{v}_j)
+\end{equation}
+
+と展開できる\autocite{leitner_mapping_2018}、また、$\frac{d\bm{r_i}}{dt}E_{i}$が十分小さいと仮定すれば、式\ref{eq:heat_flow}は次のように変形できる。\autocite{yamatoComputationalStudyThermal2022,oai:nagoya.repo.nii.ac.jp:02007698}
+
+\begin{align}
+  \label{eq:heat_flow_expanded}
+  \bm{h} &= \sum_{i=1}^{N} \left\{
+              \bm{r_i}\sum_{j=1, j \neq i }^{N} \frac{1}{2} \bf{F}_{ij} \cdot (\bf{v}_i + \bf{v}_j)
+            \right\} \\
+         &= \sum_{i=1}^{N} \sum_{j>i}^{N}
+              (\bm{r_i} - \bm{r_j}) \frac{1}{2} \bf{F}_{ij} \cdot (\bf{v}_i + \bf{v}_j)
+         &= \sum_{(i, j)}
+              (\bm{r_i} - \bm{r_j}) \frac{1}{2} \bf{F}_{ij} \cdot (\bf{v}_i + \bf{v}_j)
+\end{align}
+
+ここで、一行目から二行目への式変形には $\bf{F}_{ij} = - \bf{F}_{ij}$を用いた。
+
+最後に、
