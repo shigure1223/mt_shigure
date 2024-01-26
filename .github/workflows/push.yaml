@@ -22,6 +22,8 @@ jobs:
         with:
           name: "built-contents-${{ github.sha }}"
           path: ./dist
+      - name: Update name of pdf file
+        run: mv ./dist/main.pdf ./dist/262201296_SugiuraWataru_master-thesis.pdf
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
