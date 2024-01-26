@@ -204,6 +204,15 @@ NVEシミュレーションによって得られたトラジェクトリを用�
 次に、用いた構造がホモ四量体だったので、計算時間を短縮するため、主鎖Aに属する残基同士のペアと主鎖Aと主鎖Bに属する残基同士のペアだけ抽出した。
 最後に、 \openFortyTwo と\closeFortyTwo に共通するペアだけを選び、これを計算対象とした。
 
+\openFortyTwo と\closeFortyTwo における熱伝導度の変化を計算するために、
+
+\begin{equation}
+  \label{eq:thermal_conductivity_difference}
+  \Delta \lambda_{\rm{AB}} = \lambda_{\rm{AB, open}} - \lambda_{\rm{AB, close}}
+\end{equation}
+
+を計算した。
+
 \subsection{CURPの改良}\label{sec:curp}
 
 CURPは、AMBERの原子座標、速度の二つを入力として受け取り、二体力を算出してから熱流を演算し、出力する。
