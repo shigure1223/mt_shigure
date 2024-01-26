@@ -217,6 +217,24 @@ NVEシミュレーションによって得られたトラジェクトリを用�
 熱流ネットワークは残基間相互作用や情報伝達の行われ方を表すため、
 状態間の$\Delta \lambda_{\rm{AB}}$の絶対値が大きいペアは、状態変化を起こす、もしくは、状態変化によって大きく変化する残基間の相互作用を表すと考えられる。
 
+本研究では、機能に重要な役割を果たす残基がどのようにネットワーク上に現れるか調べるため、事前に重要と思われる残基を列挙した。
+
+\begin{table}[!ht]
+  \centering
+  \caption{重要と思われる残基}
+  \begin{tabular}{ll}
+  \hline
+      残基番号                & 残基の説明            \\
+      \hline
+      573                     & 変異するとOlmsted syndromeを発症する\autocite{lin_exome_2012,lai-cheong_recurrent_2012,nilius_trpv_2013} \\
+      412, 413, 414           & 変異させるとヒステリシスが失われる\autocite{liu_single-residue_2017} \\
+      643, 644, 647, 657, 661 & 変異させると熱活性化に影響する\autocite{grandl_pore_2008} \\
+  \end{tabular}
+  \label{tab:important_residues}
+\end{table}
+
+\ref{tab:important_residues}に示した残基は、先行研究で医学的、分子生物学的に重要とされた残基である。
+
 \subsection{CURPの改良}\label{sec:curp}
 
 CURPは、AMBERの原子座標、速度の二つを入力として受け取り、二体力を算出してから熱流を演算し、出力する。
