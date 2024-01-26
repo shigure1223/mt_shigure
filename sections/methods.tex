@@ -124,6 +124,7 @@ CHARMM-GUIを用いて、次のように系を作成した。
 %  - 1-Palmitoyl-2-oleoylphosphatidylethanolamine, https://pubchem.ncbi.nlm.nih.gov/compound/1-Palmitoyl-2-oleoylphosphatidylethanolamine
 %  - 1-palmitoyl-2-oleoyl-phosphatidylethanolamine, https://pubs.acs.org/doi/10.1021/bi060937y
 脂質二重層の構成分子は、\molNamePOPC (POPC)、\molNamePOPE (POPE)、\molNameCHOL (CHOL)を使い、これらの分子をPOPC:POPE:CHOL=2:1:1の比率で混合した。
+この比率はTRPV1の分子動力学シミュレーションの先行研究\autocite{chugunov_temperature-sensitive_2016}で膜の構成がシミュレーション結果に影響を与えることを示唆していたため、同じ構成比を利用した。
 最後に、水分子とNaClイオンを加えて系の電荷を中和した。NaClイオンは0.15 Mの濃度になるように追加した。
 シミュレーションパッケージAMBER 22\autocite{case_amber_2023}を使ったため、ポテンシャル関数としてAMBER\autocite{pearlman_amber_1995}を利用した。
 ポテンシャル関数の各パラメータは、
