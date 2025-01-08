@@ -1,259 +1,176 @@
-% 方法と材料を述べる
-% 今回の研究では、次のテクニックを使った。
-% - RMSD
-% - RMSF
-% - Thermal conductivity by curp
-%   - 熱流の理論式
-%   - 熱伝導度の理論式
-% - MD simulation
-%   - AMBER
-%   - PME
-%   - NPgT
-%   - NPT
-%   - minimization
-%   - equilibration
-%   - production
-%   - NVE
-
-% アウトライン
-% - 熱伝導度の理論を説明する
-%   - 熱伝導度の計算方法を説明する
-% - 熱伝導度を計算するための準備としての、分子動力学シミュレーションの方法を説明する
-%   - エネルギー最小化
-%   - 熱平衡化
-%   - sampling
-%   - NVE
-
-\section{熱伝導度の解析}
-% - 熱伝導度と熱流について述べる
-本研究では、先行研究が示したEEN、\Delta EEN、r\Delta EENの概念\autocite{ishikura_energy_2015,ota_energy_2019,poudel_energy_2022}を
-熱流解析に応用して、TRPV3の活性化と調節における構造的および機能的ダイナミクスを明らかにする。
-なお、本研究の目的を達成するには熱流にこだわらずEnergy fluxやエネルギー伝導度を用いた方法を用いてもよいが
-熱流から計算される熱伝導度は、実験的に測定することができるというメリットがあるため、本研究では熱流を用いた手法を用いることにした。
-
-先行研究でエネルギー流ではなくエネルギー伝導度を用いていたことにならい、本研究でも熱流ではなく熱伝導度を用いて解析した。
-ここで、熱伝導度と熱流について簡単に説明する。
-
-熱伝導度$\lambda$は平衡状態において。
-
-\begin{equation}
-  \label{eq:thermal_conductivity}
-  \lambda = \frac{1}{3Vk_B T^2} \int_{0}^{\infty} \left\langle
-    \bm{h}(0) \cdot \bm{h}(t)
-  \right\rangle dt
-\end{equation}
-
-ここで$\mathbf{h}$は熱流を表す。\autocite{mcquarrie_statistical_2000}
-
-熱流$\mathbf{h}$は以下の式で表される。
-
-\begin{equation}
-  \label{eq:heat_flow}
-  \bm{h} \equiv \frac{d}{dt} \left\{
-    \sum_{i=1}^{N} \bm{r}_i \cdot E_i
-  \right\} = \sum_{i=1}^{N} \left\{
-    \frac{d\bm{r_i}}{dt}E_i + \bm{r_i}\frac{dE_i}{dt}
-  \right\}
-\end{equation}
-
-ここで、右辺の $\frac{dE_i}{dt}$は
-
-\begin{equation}
-  \label{time_derivative_of_energy}
-  \frac{dE_i}{dt} = \sum_{j=1}^{N} \frac{1}{2} \bf{F}_{ij} \cdot (\bf{v}_i + \bf{v}_j)
-\end{equation}
-
-と展開できる\autocite{leitner_mapping_2018}。
-また、タンパク質中の原子の運動は著しく制限されるため$\frac{d\bm{r_i}}{dt}E_{i}$が十分小さいと考えて無視すれば、
-式\ref{eq:heat_flow}は次のように変形できる。\autocite{yamatoComputationalStudyThermal2022,oai:nagoya.repo.nii.ac.jp:02007698}
-
-\begin{align}
-  % \label{eq:heat_flow_expanded}
-  \bm{h} &= \sum_{i=1}^{N} \left\{
-              \bm{r_i}\sum_{j=1, j \neq i }^{N} \frac{1}{2} \bf{F}_{ij} \cdot (\bf{v}_i + \bf{v}_j)
-            \right\} \\
-         &= \sum_{i=1}^{N} \sum_{j>i}^{N}
-              (\bm{r_i} - \bm{r_j}) \frac{1}{2} \bf{F}_{ij} \cdot (\bf{v}_i + \bf{v}_j) \\
-         &= \sum_{(i, j)}
-              (\bm{r_i} - \bm{r_j}) \frac{1}{2} \bf{F}_{ij} \cdot (\bf{v}_i + \bf{v}_j) \\
-         &= \sum_{(i, j)}
-              \bm{h}_{ij}
-\end{align}
-
-ここで、一行目から二行目への式変形には $\bf{F}_{ij} = - \bf{F}_{ij}$を用いた。
-ここで得られた熱流$\bm{h}_{ij}$を使い、残基A、B間の熱流$\bm{h}{AB}$を次のように定義する。
-
-\begin{equation}
-  \label{eq:heat_flow_between_residues}
-  \bm{h}_{AB} = \sum_{\substack{(i, j) \\ i \in \rm{A}, j \in \rm{B}}} \bm{h}_{ij}
-\end{equation}
-
-最後に、この残基間熱流 $\bm{h}_{AB}$を用いて、残基間熱伝導度$\lambda_{AB}$を次のように定義する。
-
-\begin{equation}
-  \label{eq:thermal_conductivity_between_residues}
-  \lambda_{AB} = \frac{1}{3Vk_B T^2} \int_{0}^{\infty} \left\langle
-    \bm{h}_{AB}(0) \cdot \bm{h}_{AB}(t)
-  \right\rangle dt
-\end{equation}
-
 \section{分子動力学シミュレーション}
-
-熱伝導度を計算するためには、NVEアンサンブルでの分子動力学シミュレーションを行う必要がある。
-そのため本研究では、モデリング、構造最適化、熱平衡化、サンプリング、解析の5つのステップを踏んで熱伝導度の計算を行った。
+本研究では、モデリング、構造最適化、熱平衡化、サンプリング、解析の5つのステップを経た。
 
 \subsection{モデリング}
-開構造として7MIO、% FLOW_ID = 13, structure_id = 11
-閉構造として7MIN  % FLOW_ID = 11, structure_id = 9 
-を用いた。\autocite{noauthor_7mio_nodate, noauthor_7min_nodate, nadezhdinStructuralMechanismHeatinduced2021}
-それぞれの構造について、CHARMM-GUIのInput generator\autocite{jo_charmmgui_2008, lee_charmm-gui_2016}を用いて、リン脂質二重膜にタンパク質を挿入して、シミュレーションボックスを作成した。
-なお、今後開構造の7MIOを「\openFortyTwo」、閉構造の7MINを「\closeFortyTwo」と呼ぶことにする。
+膜タンパク質の構造データは、Protein Data Bank（PDB）から取得した。β2ARの不活性状態として2RH1,活性状態として3P0Gを用いた。
+%2RH1の構造情報2007
+%https://www.science.org/doi/10.1126/science.1150577
+%3P0Gの構造情報2011
+%https://www.nature.com/articles/nature09648
 
-CHARMM-GUIを用いて、次のように系を作成した。
-まず、\openFortyTwo は残基番号77から112までの残基はモデリングされていなかったため、残基番号113以降の構造情報のみを用いた。
-次に、PDBデータに含まれていたタンパク質以外の分子についてはあらかじめすべて除去した。
-また、両方のモデルについて、タンパク質分子に対して pH 7.0 でプロトン化した。
-続けて、作成したモデルをリン脂質二重層に挿入した。
-% メモ: 脂質の名前に自信がない。
-% メモ: newcommandで定義しているので、後で変更するときは定義場所だけ変更すればよい。
-% POPC
-%  - 1-palmitoyl-2-oleoyl-sn-glycero-3-phosphocholine, https://en.wikipedia.org/wiki/POPC
-% POPE
-%  - 1-palmitoyl-2-oleoyl-sn-glycero-3-phosphoethanolamine, https://avantilipids.com/product/850757
-%  - palmitoyloleoyl-phosphatidylethanolamine, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1305115/
-%  - 1-Palmitoyl-2-oleoylphosphatidylethanolamine, https://pubchem.ncbi.nlm.nih.gov/compound/1-Palmitoyl-2-oleoylphosphatidylethanolamine
-%  - 1-palmitoyl-2-oleoyl-phosphatidylethanolamine, https://pubs.acs.org/doi/10.1021/bi060937y
-脂質二重層の構成分子は、\molNamePOPC (POPC)、\molNamePOPE (POPE)、\molNameCHOL (CHOL)を使い、これらの分子をPOPC:POPE:CHOL=2:1:1の比率で混合した。
-この比率はTRPV1の分子動力学シミュレーションの先行研究\autocite{chugunov_temperature-sensitive_2016}で膜の構成がシミュレーション結果に影響を与えることを示唆していたため、同じ構成比を利用した。
-最後に、水分子とNaClイオンを加えて系の電荷を中和した。NaClイオンは0.15 Mの濃度になるように追加した。
-シミュレーションパッケージAMBER 22\autocite{case_amber_2023}を使ったため、ポテンシャル関数としてAMBER\autocite{pearlman_amber_1995}を利用した。
-ポテンシャル関数の各パラメータは、
-タンパク質の原子にはff19SB\autocite{tian_ff19sb_2020}、
-脂質の原子にはLipid21\autocite{dickson_lipid21_2022}、
-水分子にはOPC水モデル\autocite{izadi_building_2014}を用いた。
-系には3次元の周期境界条件を設定した。
-系を作成した後の系の大きさを表\ref{tab:system_size}に示す。
+モデリングでは、欠損部位の補完、結晶水の同定、膜タンパク質の構造準備の3つのステップを経た。
 
+\subsubsection{欠損部位の補完}
+PDBに登録されている膜タンパク質の構造データは、全ての残基位置が定まっているわけではない。なぜならX線結晶構造解析において、揺らぎが大きい部位は見えないからである。
+β2ARでは、MODELERソフトウェアを用いてICL3（細胞内ループ3）、N末端、C末端の欠損部位を補完した。MODELERではホモロジーモデリングを利用して、既存のPDBデータから欠損部位の座標を予測した。
+
+\subsubsection{結晶水の同定}
+
+膜タンパク質内の結晶水が重要な役割を果たしていることから、DOWSERを用いてエネルギー的に安定な水分子を同定し、構造に含める作業を行った。
+DOWSERはエネルギー的に安定な水分子の位置を計算し、これを構造データに追加することが可能である。この手順により、機能的に重要な膜タンパク質の構造を構築した。
+% ここにinactiveとactiveの追加した水分子を示す
+
+
+\subsubsection{膜タンパク質の構造準備}
+初めに、膜タンパク質と脂質膜の複合体構造は、CHARMM-GUIを用いて作成した。
+複合体構築には「置換法（Replacement Method）」を採用し、タンパク質を囲むように脂質二重膜を配置した。
+以下にCHARMM-GUIの設定手順を示す。
+\begin{enumerate}
+    \item \textbf{初期設定}: CHARMM-GUIサイトで\textit{Protein/Membrane System}を選択し、準備したPDBファイルをアップロード。
+    \item \textbf{分子選択}: リガンドと結晶水を含めるように選択。
+    \item \textbf{プロトン化とジスルフィド結合の設定}: 必要に応じてプロトン化残基やジスルフィド結合を指定。
+    \item \textbf{脂質二重膜の構築}: Heterogeneous Lipidを選択し、XY軸長を60~\AA\ $\times$ 60~\AA\ に設定。
+    \item \textbf{システム構築}: NaCl濃度を0.15Mに設定し、シミュレーションシステムを完成。
+\end{enumerate}
+作成したタンパク質構造をAmber形式に変換するため、以下の作業を行った。
+\begin{itemize}
+    \item N末端およびC末端のCAP残基をAmber形式に変換。
+    \item 原子名の命名規則を修正。
+    \item \texttt{TER}カードの挿入。
+\end{itemize}
+
+続いて、リガンドの力場構築には、AmberToolsの\texttt{antechamber}と\texttt{parmchk2}ツールを使用した。
+以下に具体的な手順を示す。
+\begin{enumerate}
+    \item \textbf{Gaussian出力の準備}：リガンドの3D構造をGaussianで最適化し、ESP電荷を計算。
+    \item \textbf{レスパ電荷の割り当て}：\texttt{antechamber}を用いて、リガンドのAM1-BCC電荷を計算。
+    \item \textbf{パラメータチェック}：\texttt{parmchk2}を用いて、\texttt{frcmod}ファイル（補完的なパラメータファイル）を作成。
+    \item \textbf{ファイルの統合}：リガンドのパラメータをAmber力場形式に統合し、シミュレーションシステムに組み込み。
+\end{enumerate}
+
+続いて、実際にシミュレーションを行うシステムに対して、プロトン化状態の修正、ジスルフィド結合の形成を行う。
+プロトン化状態の修正に関しては、タンパク質構造が与えられた環境下で適切なプロトン化状態を取るように、残基の名前を変更する必要がある。
+本研究では、脂質環境下にあるGlu122はGLHに変更し、膜表面側にある残りのGLu,Asp,Arg,Lysは中性（pH=7）での状態を採用した。
+ジスルフィド結合に関しては、Cys93-Cys178とCys171-Cys177のCYSをCYXに変更した。
+
+最後に、タンパク質-リガンド複合体の分子動力学シミュレーションで用いるためのシミュレーション用のファイルを準備した。
+シミュレーションに使用する力場関数に関して、
+タンパク質にはff12SB、
+脂質にはlipid21、
+リガンドにはgaff2、
+水分子にはtip3pモデルを用いた。
+
+系のユニットセルサイズはCHARMM-GUIで得られた情報に基づいて、以下のように指定する。
 \begin{table}[!ht]
-  \centering
-  \caption{シミュレーションに用いた系の大きさ}
-  \begin{tabular}{lll}
-    \hline
-    モデル名        & 原子数  & ボックスの大きさ(x, y, z) \\
-    \hline 
-    \openFortyTwo  & 1183281 & 250.19627, 250.19627, 161.529 \\ 
-    \closeFortyTwo & 1206767 & 250.14921, 250.14921, 164.691 \\ 
-  \end{tabular}
-  \label{tab:system_size}
-\end{table}
+    \centering
+    \caption{シミュレーションに用いた系の大きさ}
+    \begin{tabular}{lll}
+      \hline
+      モデル名          & 原子数  & ボックスの大きさ(x, y, z) \\
+      \hline 
+      inactive（3P0G）  & 84225 & 80.2377, 80.2377, 113.064 \\ 
+      active（2RH1）    & 70608 & 80.0239, 80.0239, 136.043 \\ 
+    \end{tabular}
+    \label{tab:system_size}
+  \end{table}
 
-\subsection{シミュレーション}
-作成したモデルは、以下の手続きによりシミュレーションを行った。シミュレーションには、Particle Mesh Ewald法を用いた。
-% 粒子として取り扱う距離を cut = 9 [A]とした。
 
-はじめに、構造最適化を行った。構造最適化は3つのステップに分けて行った。
-最初のステップでは、水以外の原子に対してrestraintをかけて、水の構造、並びを最適化した。
-次のステップでは、タンパク質の原子に対してrestraintをかけて、水と脂質の構造を最適化した。
-最後のステップでは、すべてのrestraintを外して、全体の構造を最適化した。
-各ステップにおいて、最初の2500ステップで最急降下法によるエネルギー最小化を行い、次の2500ステップで共役勾配法によるエネルギー最小化を行った。
 
-次に、熱平衡化を行った。
-熱平衡化は大きく分けて2つのステップに分けて行った。
-% 1. T = 10K で開始。NVT. 初期速度はマクスウェル分布で与える。1.mdinと2.mdinを使って、dt = 1 fsで125000 + 125000 = 250 psのシミュレーションの中で10 K -> 300Kまで上げる。
-% 2. NPgT. 125000 steps, dt = 1 fs. 3.mdin
-% 3. NPgT. 250000 steps, dt = 2 fs. 4.mdin
-% 4. 
-初めに、NVTアンサンブルで系の温度を上げた。初期速度は温度$T = 10 \rm{[K]}$のマクスウェル分布に従って与え、250 $\rm{ps}$で温度を$T = 315.15 \rm{[K]}$まで上昇させた。
-次に、NP\gamma Tアンサンブルで平衡化を行った。
-NP\gamma Tアンサンブルでは、温度、表面張力、系の総数が一定になるようにシミュレーションを行う。
-詳細なシミュレーション条件は、表\ref{tab:simulation_condition}に示す。
+\subsection{構造最適化}
+構造最適化は3つのステップに分けて行った。
+全てのステップにおいて、最急降下法で最小化を開始し、200ステップ後に共役勾配法(CG法)へ切り替えている。
+初めに、水素以外の全ての原子に位置制約を課し、タンパク質周辺の脂質や水分子の構造最適化を行った。
+続いて、膜タンパク質の主鎖原子、リガンドの重原子、脂質のhead部分に位置制約を課し、膜タンパク質の側鎖原子や水分子の構造最適化を行った。
+最後に、上記の束縛力を弱めて、全体の構造を最適化した。
 
-% TODO: restraintについて記述する。
-\begin{table}[!ht]
-  \centering
-  \caption{シミュレーション条件}
-  \begin{tabular}{lllll}
-    \hline
-    ステップ & \Delta t [fs] & 時間 [ps] & アンサンブル & 温度 [T] \\
-    \hline
-    1       & 1              & 250       & NVT         & 10 $\rightarrow$ 315.15 \\
-    2       & 1              & 1625      & NP\gamma T  & 315.15 \\
-  \end{tabular}
-  \label{tab:simulation_condition}
-\end{table}
+\subsection{熱平衡化}
+熱平衡化は4つのステップに分けて行った。
+初めに、NVTアンサンブルで系を徐々に加熱させた。
+初期速度は温度$T = 0 \rm{[K]}$のマクスウェル分布に従って与え、 100 $\rm{ps}$で温度を$T = 310 \rm{[K]}$まで上昇させた。
+タンパク質とリガンドに対して2.0 \, \text{kcal/mol/\AA}^2の拘束を加えた。
+続いて、NVT条件下で200 $\rm{ps}$のシミュレーションを行った。
+langevin法を用いた温度制御を行いながら、$T = 310 \rm{[K]}$で設定した。
+タンパク質とリガンドの位置拘束の重みを0.1 \, \text{kcal/mol/\AA}^2に設定した。
+続いて、上記と同様のNVT条件下で、今度は位置拘束を全て外して、200 $\rm{ps}$のシミュレーションを行った。
+最後に、NP\gamma T条件下で700 $\rm{ps}$のシミュレーションを行った。
+langevin法を用いた温度制御とBerendsen法を用いた圧力制御を行いながら、$T = 310 \rm{[K]}$で設定した。
+位置拘束を外し、膜系のシミュレーション用に表面張力\gamma = 17 \, \text{dyne/cm}で設定した。
 
-続いて、$\gamma = 17.0$でNP\gamma Tシミュレーションによるサンプリングを行った。
-熱平衡化の最後のステップと同じ、ただしrestraintを外した状態で10 nsのシミュレーションを実行した。
-最後の5 nsの中で、各500 psごとに座標と速度を保存し、次のNVEのシミュレーションの初期状態として用いた。
+\subsection{サンプリング}
+ここではNP\gamma Tシミュレーションによるサンプリングを56 $\rm{ns}$行った。
+設定は、熱平衡化で行ったNP\gamma Tシミュレーションと同様である.
 
+\subsection{保存された結晶水の同定}
+保存された結晶水を同定するために、サンプリングで得られたシミュレーションデータから水分子の位置とその密度を分析した。
+具体的には、シミュレーションの各タイムステップで得られる水分子の座標を格子状に集約し、一定の密度しきい値を超えた水分子を保存された水として同定した。
+
+\subsection{NVE}
 最後にNVEシミュレーションによるサンプリングを行った。
 初期状態として、NP\gamma Tシミュレーションによるサンプリングで得られた座標と速度を用いた。
-保存した座標と速度のうち、5つを使って\Delta t = 1 fs、1 nsのシミュレーションを実行した。
-シミュレーション中、各10 fsごとにトラジェクトリを保存した。
-最終的に、\openFortyTwo と\closeFortyTwo について、それぞれ5つの1 nsのトラジェクトリを得て、次節の解析に用いた。
+保存した座標と速度のうち、2つを使って\Delta t = 0.5 fs、1000 $\rm{ps}$のシミュレーションを実行した。
+最終的に、inactive状態active状態双方で1000psトラジェクトリを計10本取得した。
 
-\section{熱伝導度の解析}
+\section{ネットワーク構築}
+グラフ理論では、タンパク質のアミノ酸残基の相互作用を、ノードとエッジを用いたアミノ酸ネットワークとして表すことができる。
+そしてエッジに重みづけをすることで、エッジを同じ距離1とするのではなく、各結合ごとに強度を振り分けることが可能である。
 
-NVEシミュレーションによって得られたトラジェクトリを用いて、熱伝導度を計算した。
-熱伝導度の計算には、CURP\autocite{ishikura_energy_2015,ota_energy_2019,yamatoComputationalStudyThermal2022,wangSiteselectiveHeatCurrent2023} を用いた。
+本研究では、ノードをアミノ酸残基とし、以下の条件に基づいてエッジを形成した。
+1. 残基ペア間の最短距離が3\,\text{\AA}未満である場合、エッジを形成する。
+2. アミノ酸配列上で隣接する残基感のエッジは削除する。
+ここで、残基ペア間の最短距離は、NVEトラジェクトリの全フレームの座標を時間平均することで得られた平均構造を用いて計算したものである。
+隣接する残基間のエッジを削除した理由は、本研究ではinactive状態からactive状態へのアロステリック転移に寄与する、より長距離で特異的なnative contactに焦点を当てるためである。
 
-熱伝導度を計算する残基ペアは次のように選んだ。まず、残基間最近接距離が6\AA 以内の非共有結合を形成する残基同士をペアとして選んだ。
-共有結合を含めた計算を行おうとすると、共有結合に基づく振動を考慮に入れるために、分子動力学シミュレーションの時間刻みを小さくする必要がある。
-しかし今回は計算時間を短縮するため、時間刻みを小さくすることができなかった。そのため、本研究においてはペアとして共有結合をとる残基を含めない。
-次に、用いた構造がホモ四量体だったので、計算時間を短縮するため、主鎖Aに属する残基同士のペアと主鎖Aと主鎖Bに属する残基同士のペアだけ抽出した。
-最後に、 \openFortyTwo と\closeFortyTwo に共通するペアだけを選び、これを計算対象とした。
+エッジの重みづけとして、残基間最短距離の2乗逆数の平均\langle \frac{1}{d^2} \rangle を用いた。
+エネルギー移動速度は残基間距離の2乗平均に反比例し、距離が短いほどエネルギーのやり取りが効率的で移動速度が早くなり、距離が長くなるほどエネルギーの分散が増え移動速度が遅くなる、という振動エネルギー移動の物理的挙動を正確に記述している \cite{acs2025}。
+%https://pubs.acs.org/doi/10.1021/acs.jpclett.5b02514
+そこで、本研究でも、局所的なエネルギー移動効率を反映したネットワークを構築した。
 
-\openFortyTwo と\closeFortyTwo における熱伝導度の変化を計算するために、
 
-\begin{equation}
-  \label{eq:thermal_conductivity_difference}
-  \Delta \lambda_{\rm{AB}} = \lambda_{\rm{AB, open}} - \lambda_{\rm{AB, close}}
-\end{equation}
-
-を計算した。
-熱流ネットワークは残基間相互作用や情報伝達の行われ方を表すため、
-状態間の$\Delta \lambda_{\rm{AB}}$の絶対値が大きいペアは、状態変化を起こす、もしくは、状態変化によって大きく変化する残基間の相互作用を表すと考えられる。
-
-本研究では、機能に重要な役割を果たす残基がどのようにネットワーク上に現れるか調べるため、事前に重要と思われる残基を列挙した。
-
+以下がネットワークの詳細である。
 \begin{table}[!ht]
-  \centering
-  \caption{重要と思われる残基}
-  \begin{tabular}{ll}
-  \hline
-      残基番号                & 残基の説明            \\
+    \centering
+    \caption{ネットワーク上のノードとエッジの数}
+    \begin{tabular}{lll}
       \hline
-      573                     & 変異するとOlmsted syndromeを発症する\autocite{lin_exome_2012,lai-cheong_recurrent_2012,nilius_trpv_2013} \\
-      412, 413, 414           & 変異させるとヒステリシスが失われる\autocite{liu_single-residue_2017} \\
-      643, 644, 647, 657, 661 & 変異させると熱活性化に影響する\autocite{grandl_pore_2008} \\
-  \end{tabular}
-  \label{tab:important_residues}
-\end{table}
+      モデル名          & ノード数  & エッジ数 \\
+      \hline 
+      inactive（3P0G）  &  351 &  \\ 
+      active（2RH1）    &  349 &  \\ 
+    \end{tabular}
+    \label{tab:system_size}
+  \end{table}
 
-\ref{tab:important_residues}に示した残基は、先行研究で医学的、分子生物学的に重要とされた残基である。
-変異によって活性の動態が変化することから、これが熱的なやり取りによるものなら、これらの残基の周囲で変化が現れると考えられる。
 
-\subsection{CURPの改良}\label{sec:curp}
 
-CURPは、AMBERの原子座標、速度の二つを入力として受け取り、二体力を算出してから熱流を演算し、出力する。
-この一連の流れのうち、約8割の計算時間は二体力と座標の変位の演算に充てられる。
-二体力の演算時間は原子ペア数に比例して増えるため、今回の研究のような大規模な系では二体力の演算にかかる時間を短縮する必要がある。
-従来は系の大きさを小さく保ったり計算する範囲を狭めたりしていたが、今回の研究では避けられなくなってしまったため、
-二体力と座標の変位の演算時間を短縮するための変更を行った。
+\section{Louvain法によるコミュニティ検出}
 
-具体的には、従来のCURPでは、二体力の計算と座標の変位の演算を別々に分けていた。
-Fortran 90で記述された二体力計算ルーチンと座標の変位計算ルーチンがそれぞれ呼び出されていた。
-このルーチンを統合し、二体力の計算と座標の変位の計算を同時に行うようにした。
+Louvain法は、ネットワークにおけるコミュニティ構造を検出するための効率的なアルゴリズムです。本研究では、Louvain法を実装してネットワークデータを解析し、最適なコミュニティ分割とモジュラリティの評価を行った。
+%louvain方の引用2008
+%https://iopscience.iop.org/article/10.1088/1742-5468/2008/10/P10008/meta?casa_token=gUnIfMpEgFUAAAAA:CzncxXVCSbFF0gBux5xGhAWMnQDOio3eBOyMY8VDngPf7-LFexsnOz5gan6uHE0dlL7JrLJQAdwuwauUSrrCsmDHg0g
+\subsection{モジュラリティの定義}
+モジュラリティ$Q$は、ネットワーク内で検出されたコミュニティ構造の質を評価する尺度である。具体的には、同一コミュニティ内に存在するリンクの密度が、ランダムに生成されたネットワークと比較してどれほど顕著であるかを示す。
+モジュラリティは以下の式で定義される：
+\begin{equation}
+Q = \sum_{c \in \text{コミュニティ}} \left( \frac{m_c}{m} - \left( \frac{K_c}{2m} \right)^2 \right),
+\end{equation}
+ここで、$m_c$はコミュニティ$c$内のエッジの重み合計、$m$は全エッジの重み合計、$K_c$はコミュニティ$c$内のノードの次数の合計である。
 
-% >>> optimized_times = [13.76848,13.70891,13.71280,13.76977,12.39074,13.05582,12.89777,12.90534,13.34440,13.36865]
-% >>> original_times = [18.69356,18.69938,18.46984,18.51525,18.72938,18.57986,18.74573,18.39699,18.31260,18.28664]
-% >>> sum(optimized_times)/sum(original_times)
-% 0.7168377930491325
-実は原理上、二体力の計算を行う中で座標の変位の計算を行うため、
-演算途中の座標の変位を保存しておくだけで達成できたため、大幅な計算時間の短縮ができた。
-最適化前と後で10回、テスト以外に負荷のない状態の同じ機材を用いてテスト計算を行った。
-まず、最適化前と後で、計算結果に差がないことを確認した。
-また、I/O待ち時間やセットアップ時間を除いた時間を比較すると、計算時間を平均39\%削減した。
+\subsection{アルゴリズムの流れ}
+Louvain法は以下の2つのステップを繰り返してコミュニティを検出する：
+\begin{enumerate}
+    \item \textbf{局所移動ステップ:} 各ノードを隣接するコミュニティに移動させ、モジュラリティの増加が最大となる配置を探索する。
+    このプロセスにおいて、モジュラリティの変化量$\Delta Q$は以下で計算される：
+    \begin{equation}
+    \Delta Q = \Delta Q_{\text{削除}} + \Delta Q_{\text{挿入}},
+    \end{equation}
+    ここで、$\Delta Q_{\text{削除}}$はノードを元のコミュニティから削除した際のモジュラリティの変化量、$\Delta Q_{\text{挿入}}$はノードを新たなコミュニティに追加した際のモジュラリティの変化量である。
+    \item \textbf{集約ステップ:} 検出されたコミュニティを1つのノードとして扱い、新しいネットワークを構築する。この操作を通じて、階層的なコミュニティ構造を得ることが可能である。
+\end{enumerate}
 
-本研究では、この最適化を施したCURPを用いて熱伝導度を計算した。
-また、最適化のパッチをCURPの公式リポジトリ https://github.com/yamatolab/current-calculations-for-proteins/ に提出し、内容を反映させた。
+\subsection{本研究での実装}
+本研究では、Pythonを用いてLouvain法を実装した。以下に本実装の主要な特徴を挙げる：
+\begin{itemize}
+    \item モジュラリティの増加が小さい場合に収束するよう、収束条件として閾値$\epsilon = 10^{-7}$を設定した。
+    \item ノードの移動においてランダム性を導入し、複数回の試行により最適解を探索した。
+    \item 実験結果として、100回の試行の中で最高のモジュラリティおよびその標準偏差と標準誤差を算出した。
+\end{itemize}
