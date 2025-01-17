@@ -1,24 +1,32 @@
-\section{MDシミュレーション}
-$\beta$2ARのinactive状態active状態双方で1000psトラジェクトリを計10本取得した。
-また保存された結晶水はinactive状態で〇個、active状態で〇個同定され、その位置は以下の画像に示す。
+\section{分子動力学(MD)シミュレーション}
+
+%MDの信頼性、同定されたDOWSERによる結晶水/保存されている結晶水の画像と説明
+$\beta_2$ARのinactive状態active状態双方で1000psトラジェクトリを計10本取得した。
+また保存された結晶水はinactive状態で7個、active状態で5個同定され、
+その位置は図\ref{fig:water-all}に示す。
+
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{inactive.png}
-    \caption{$\beta$2ARのinactive状態において同定された保存水を示した図。グレーはタンパク質、オレンジはリガンド、青色が保存水を示している。}
-    \label{fig:inactive_water}
-\end{figure}
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{inactive.png}
-    \caption{$\beta$2ARのactive状態において同定された保存水を示した図。グレーはタンパク質、オレンジはリガンド、青色が保存水を示している。}
-    \label{fig:active_water}
-\end{figure}
+    \begin{subfigure}{0.45\textwidth} % 各図の幅を調整
+      \centering
+      \includegraphics[width=\textwidth]{inactive_only_water.png}
+      \caption{$\beta_2$ARのinactive状態における保存された結晶水。}
+      \label{fig:inactive_water}
+    \end{subfigure}
+    \hspace{0.05\textwidth} % 図の間のスペース
+    \begin{subfigure}{0.45\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{active_only_water.png}
+      \caption{$\beta_2$ARのactive状態における保存された結晶水。}
+      \label{fig:active_water}
+    \end{subfigure}
+    \caption{{保存された結晶水}
+    \label{fig:water-all}
+  \end{figure}
 
-inactive構造とactive構造の双方に共通で保存されている結晶水は〇個あり、
+%先行研究との比較
 
-%MDの信頼性、同定された結晶水の話
-
-\section{$\beta$2ARのinactiveおよびactive状態のコミュニティ検出}
+\section{$\beta_2$ARのinactiveおよびactive状態のコミュニティ検出}
 
 \subsubsection{Louvain法の信頼性}
 
@@ -31,7 +39,7 @@ Louvain法の結果の信頼性は、モジュラリティ$Q$の値を用いて�
     \item \( Q \) が正：ネットワーク内にコミュニティ構造が存在する。
 \end{itemize}
 
-本研究の解析対象である$\beta$2ARのinactiveおよびactive状態のコミュニティ検出におけるモジュラリティ$Q$の最良値および標準偏差を計算した。
+本研究の解析対象である$\beta_2$ARのinactiveおよびactive状態のコミュニティ検出におけるモジュラリティ$Q$の最良値および標準偏差を計算した。
 
 \paragraph{試行回数100回におけるモジュラリティ値の平均および標準偏差}
 \begin{itemize}
@@ -44,27 +52,29 @@ Louvain法の結果の信頼性は、モジュラリティ$Q$の値を用いて�
     \item active状態：\( \pm 0.0004 \)
 \end{itemize}
 
-標準誤差が小さいことから、今回の試行回数（100回）で得られたモジュラリティ値の推定制度は高いと判断できる。
-特にinactive状態とactive状態のモジュラリティ値はどちらも正の値を示しており、ネットワーク内にコミュニティ構造があることを示唆している。
-
+inactive状態とactive状態のモジュラリティ値はどちらも正の値を示しており、ネットワーク内に明確に分割されたコミュニティ構造があることを示唆している。
 
 \subsection{Louvain法で検出されたコミュニティ}
 
-図\ref{fig:inactive}$\beta$2ARのinactive構造で検出されたコミュニティ、図\ref{fig:active}$\beta$2ARのactive構造で検出されたコミュニティを示す。
-
+図\ref{fig:inactive}には$\beta_2$ARのinactive構造で検出されたコミュニティ、図\ref{fig:active}にはactive構造で検出されたコミュニティを示す。
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{inactive.png}
-    \caption{$\beta$2ARのinactive状態において検出されたコミュニティ構造を色分けして示した図。各色と名付けたコミュニティは以下に表す：黒（start）、シアン（end）、白（helix）、ピンク（back）、グレー（loop）、黄色（ligand）、青（gprotein）。}
-    \label{fig:inactive}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{active.png}
-    \caption{$\beta$2ARのactive状態において検出されたコミュニティ構造を色分けして示した図。各色と名付けたコミュニティは以下に表す：黒（start）、シアン（end）、白（helix）、ピンク（back）、グレー（loop）、黄色（ligand）、青（gprotein）、赤（new）。}
-    \label{fig:active}
-\end{figure}
+    \begin{subfigure}{0.45\textwidth} % 各図の幅を調整
+      \centering
+      \includegraphics[width=\textwidth]{inactive.png}
+      \caption{$\beta_2$ARのinactive状態において検出されたコミュニティ構造を色分けして示した図。各色と名付けたコミュニティは以下に表す：黒（start）、シアン（end）、白（helix）、ピンク（back）、グレー（loop）、黄色（ligand）、青（gprotein）。}
+      \label{fig:inactive_water}
+    \end{subfigure}
+    \hspace{0.05\textwidth} % 図の間のスペース
+    \begin{subfigure}{0.45\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{active.png}
+      \caption{$\beta_2$ARのactive状態において検出されたコミュニティ構造を色分けして示した図。各色と名付けたコミュニティは以下に表す：黒（start）、シアン（end）、白（helix）、ピンク（back）、グレー（loop）、黄色（ligand）、青（gprotein）、赤（new）。}
+      \label{fig:active_water}
+    \end{subfigure}
+    \caption{{コミュニティ構造}
+    \label{fig:water-all}
+  \end{figure}
 
 まず双方のコミュニティに共通することとして、リガンド結合部位と活性部位であるGタンパク質結合部位に対応する独立したコミュニティが、黄色（ligand）、青（gprotein）として検出された。
 また図\ref{fig:inactive}から図\ref{fig:active}への変化として、青（gprotein）コミュニティの再編成が起きていることと、赤（new）コミュニティが新規に形成されたことが挙げられる。
@@ -146,7 +156,7 @@ D_{\text{internal}} = \frac{\sum_{(u,v) \in E_C} w_{uv}}{\sum_{(u,v) \in E_C} w_
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{internal_modularities.png}
-    \caption{$\beta$2ARのinactive状態とactive状態において検出されたコミュニティのコミュニティ内エッジ密度を示した図。コミュニティの名称は、図\ref{fig:inactive}と図\ref{fig:active}で名付けたものである。}
+    \caption{$\beta_2$ARのinactive状態とactive状態において検出されたコミュニティのコミュニティ内エッジ密度を示した図。コミュニティの名称は、図\ref{fig:inactive}と図\ref{fig:active}で名付けたものである。}
     \label{fig:internal}
 \end{figure}
 
@@ -179,7 +189,7 @@ D_{\text{inter}} = \frac{\sum_{\substack{u \in C_i \\ v \in C_j}} w_{uv}}{\sum_{
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{internal_modularities.png}
-    \caption{$\beta$2ARのinactive状態とactive状態において検出されたコミュニティのコミュニティ間エッジ密度を示した図。コミュニティの名称は、図\ref{fig:inactive}と図\ref{fig:active}で名付けたものである。}
+    \caption{$\beta_2$ARのinactive状態とactive状態において検出されたコミュニティのコミュニティ間エッジ密度を示した図。コミュニティの名称は、図\ref{fig:inactive}と図\ref{fig:active}で名付けたものである。}
     \label{fig:internal}
 \end{figure}
 
