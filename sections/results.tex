@@ -9,18 +9,18 @@ $\beta_2$ARのinactive状態active状態双方で1000psトラジェクトリを�
     \centering
     \begin{subfigure}{0.45\textwidth} % 各図の幅を調整
       \centering
-      \includegraphics[width=\textwidth]{inactive_only_water.png}
+      \includegraphics[width=\textwidth]{inactive_saved_water.png}
       \caption{$\beta_2$ARのinactive状態における保存された結晶水。}
       \label{fig:inactive_water}
     \end{subfigure}
     \hspace{0.05\textwidth} % 図の間のスペース
     \begin{subfigure}{0.45\textwidth}
       \centering
-      \includegraphics[width=\textwidth]{active_only_water.png}
+      \includegraphics[width=\textwidth]{active_saved_water.png}
       \caption{$\beta_2$ARのactive状態における保存された結晶水。}
       \label{fig:active_water}
     \end{subfigure}
-    \caption{{保存された結晶水}
+    \caption{保存された結晶水}
     \label{fig:water-all}
   \end{figure}
 
@@ -62,28 +62,28 @@ inactive状態とactive状態のモジュラリティ値はどちらも正の値
     \begin{subfigure}{0.45\textwidth} % 各図の幅を調整
       \centering
       \includegraphics[width=\textwidth]{inactive.png}
-      \caption{$\beta_2$ARのinactive状態において検出されたコミュニティ構造を色分けして示した図。各色と名付けたコミュニティは以下に表す：黒（start）、シアン（end）、白（helix）、ピンク（back）、グレー（loop）、黄色（ligand）、青（gprotein）。}
+      \caption{$\beta_2$ARのinactive状態において検出されたコミュニティ構造を色分けして示した図。各色と名付けたコミュニティは以下に表す：黒(start)、シアン(end)、白(helix)、ピンク(back)、グレー(loop)、黄色(ligand)、青(gprotein)。}
       \label{fig:inactive_water}
     \end{subfigure}
     \hspace{0.05\textwidth} % 図の間のスペース
     \begin{subfigure}{0.45\textwidth}
       \centering
       \includegraphics[width=\textwidth]{active.png}
-      \caption{$\beta_2$ARのactive状態において検出されたコミュニティ構造を色分けして示した図。各色と名付けたコミュニティは以下に表す：黒（start）、シアン（end）、白（helix）、ピンク（back）、グレー（loop）、黄色（ligand）、青（gprotein）、赤（new）。}
+      \caption{$\beta_2$ARのactive状態において検出されたコミュニティ構造を色分けして示した図。各色と名付けたコミュニティは以下に表す：黒(start)、シアン(end)、白(helix)、ピンク(back)、グレー(loop)、黄色(ligand)、青(gprotein)、赤(new)。}
       \label{fig:active_water}
     \end{subfigure}
-    \caption{{コミュニティ構造}
+    \caption{コミュニティ構造}
     \label{fig:water-all}
   \end{figure}
 
-まず双方のコミュニティに共通することとして、リガンド結合部位と活性部位であるGタンパク質結合部位に対応する独立したコミュニティが、黄色（ligand）、青（gprotein）として検出された。
-また図\ref{fig:inactive}から図\ref{fig:active}への変化として、青（gprotein）コミュニティの再編成が起きていることと、赤（new）コミュニティが新規に形成されたことが挙げられる。
+まず双方のコミュニティに共通することとして、リガンド結合部位と活性部位であるGタンパク質結合部位に対応する独立したコミュニティが、黄色(ligand)、青(gprotein)として検出された。
+また図\ref{fig:inactive}から図\ref{fig:active}への変化として、青(gprotein)コミュニティの再編成が起きていることと、赤(new)コミュニティが新規に形成されたことが挙げられる。
 
-青（gprotein）コミュニティと赤（new）コミュニティに属する残基の比較を行うと、以下のようになる。
+青(gprotein)コミュニティと赤(new)コミュニティに属する残基の比較を行うと、以下のようになる。
 
 %比較したtableを追加
 
-active状態になると、青（gprotein）コミュニティにはリガンドと保存された結晶水3つ、赤（new）コミュニティにはモチーフが追加された。
+active状態になると、青(gprotein)コミュニティにはリガンドと保存された結晶水3つ、赤(new)コミュニティにはモチーフが追加された。
 %何のモチーフ
 
 ここで、図\ref{fig:inactive}と図\ref{fig:active}で示されているネットワークの全体密度を計算する。
@@ -142,15 +142,8 @@ D_{\text{internal}} = \frac{\sum_{(u,v) \in E_C} w_{uv}}{\sum_{(u,v) \in E_C} w_
 分母の \(\sum_{(u,v) \in E_C} w_{uv}^{\text{max}}\) は、そのコミュニティ内の全てのノードが完全に接続している場合のエッジの最大可能重みの合計を示している。
 ただし、自己ループは除く。
 
-%しかし$D_{\text{raw_internal}}$はネットワーク全体の性質に影響を受けるため、全体エッジ密度が異なるinactive構造とactive構造で比較する場合は適切な補正を行う必要がある。
-%ネットワーク全体のエッジ密度が異なると、密なネットワークではコミュニティ内エッジ密度が高くなりやすく、疎なネットワークでは低くなりやすい傾向があるからだ。
 
-%そのため、コミュニティ内エッジ密度を全体エッジ密度で正規化し、コミュニティがネットワーク全体の密度と比較してどれだけ密であるかを評価する$D_{\text{internal}}$を、正規化されたコミュニティ内エッジ密度として用いる。
-%\[
-%D_{\text{internal}} = \frac{D_{\text{raw_internal}}}{D_{\text{global}} }
-%\]
-
-コミュニティ内エッジ密度$D_{\text{internal}}$は、ネットワーク全体のエッジ密度を基準としてコミュニティ内のエッジ密度がネットワーク全体と比べて相対的にどれだけ高い（または低い）かを示し、コミュニティ内部でどれだけ密接に関連しているかを測定することを目的としている。
+コミュニティ内エッジ密度$D_{\text{internal}}$は、ネットワーク全体のエッジ密度を基準としてコミュニティ内のエッジ密度がネットワーク全体と比べて相対的にどれだけ高い(または低い)かを示し、コミュニティ内部でどれだけ密接に関連しているかを測定することを目的としている。
 上記の式に基づいて、inactive構造とactive構造のコミュニティ内エッジ密度を計算すると、それぞれ以下のようになる。
 
 \begin{figure}[htbp]
@@ -232,7 +225,7 @@ inactive状態では、loopコミュニティやnewコミュニティにおい�
 \section{ノード削除によるactiveネットワーク接続性への影響}
 
 あるノードがactiveネットワーク全体または所属するコミュニティの接続性に与える影響を定量化に評価するために、impact scoreという変数を導入した。
-これは、特定のノードをactiveネットワークから削除した際に生じる全体エッジ密度とコミュニティ内エッジ密度の変化量を基に計算した。全体エッジ密度とコミュニティ内エッジ密度はそれぞれ前述の式（式 \ref{eq:global_density}）と式（式 \ref{eq:internal_density}）に従っている。
+これは、特定のノードをactiveネットワークから削除した際に生じる全体エッジ密度とコミュニティ内エッジ密度の変化量を基に計算した。全体エッジ密度とコミュニティ内エッジ密度はそれぞれ前述の式(式 \ref{eq:global_density})と式(式 \ref{eq:internal_density})に従っている。
 以降、全体エッジ密度の変化量をglobal impact score、コミュニティ内エッジ密度の変化量をcommunity impact scoreと表現する。
 
 また、global impact scoreとcommunity impact scoreについて、Zスコアを算出することで影響の大小を統計的に評価する。
