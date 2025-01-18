@@ -11,19 +11,20 @@ $\beta_2$ARのinactive状態active状態双方で1000psトラジェクトリを�
       \centering
       \includegraphics[width=\textwidth]{inactive_saved_water.png}
       \caption{$\beta_2$ARのinactive状態における保存された結晶水。}
-      \label{fig:inactive_water}
+      \label{fig:inactive_system}
     \end{subfigure}
     \hspace{0.05\textwidth} % 図の間のスペース
     \begin{subfigure}{0.45\textwidth}
       \centering
       \includegraphics[width=\textwidth]{active_saved_water.png}
       \caption{$\beta_2$ARのactive状態における保存された結晶水。}
-      \label{fig:active_water}
+      \label{fig:active_system}
     \end{subfigure}
     \caption{保存された結晶水}
     \label{fig:water-all}
   \end{figure}
 
+\newpage
 %先行研究との比較
 
 \section{$\beta_2$ARのinactiveおよびactive状態のコミュニティ検出}
@@ -138,8 +139,11 @@ D_{\text{internal}} = \frac{\sum_{(u,v) \in E_C} w_{uv}}{\sum_{(u,v) \in E_C} w_
 \]
 
 ここで$E_C$はコミュニティ$C$内の全エッジの集合、$w_{uv}$はノード$u$とノード$v$の間の実際のエッジ重み、$w_{uv}^{\text{max}}$はノード$u$とノード$v$の間のエッジの最大可能重みである。
+
 分子の\(\sum_{(u,v) \in E_C} w_{uv}\)はコミュニティに属するノード間に存在する実際のエッジの重みの合計を示している。
-分母の \(\sum_{(u,v) \in E_C} w_{uv}^{\text{max}}\) は、そのコミュニティ内の全てのノードが完全に接続している場合のエッジの最大可能重みの合計を示している。
+分母の \(\sum_{(u,v) \in E_C} w_{uv}^{\text{max}}\) は、
+そのコミュニティ内の全てのノードが完全に接続している場合のエッジの最大可能重みの合計を示している。
+
 ただし、自己ループは除く。
 
 
@@ -152,6 +156,8 @@ D_{\text{internal}} = \frac{\sum_{(u,v) \in E_C} w_{uv}}{\sum_{(u,v) \in E_C} w_
     \caption{$\beta_2$ARのinactive状態とactive状態において検出されたコミュニティのコミュニティ内エッジ密度を示した図。コミュニティの名称は、図\ref{fig:inactive}と図\ref{fig:active}で名付けたものである。}
     \label{fig:internal}
 \end{figure}
+
+\newpage
 
 コミュニティ内エッジ密度$D_{\text{internal}}$の値は以下のように解釈される：
 \begin{itemize}
@@ -185,6 +191,8 @@ D_{\text{inter}} = \frac{\sum_{\substack{u \in C_i \\ v \in C_j}} w_{uv}}{\sum_{
     \caption{$\beta_2$ARのinactive状態とactive状態において検出されたコミュニティのコミュニティ間エッジ密度を示した図。コミュニティの名称は、図\ref{fig:inactive}と図\ref{fig:active}で名付けたものである。}
     \label{fig:internal}
 \end{figure}
+
+\newpage
 
 ただし、inactive状態とactive状態の双方でコミュニティ間エッジ密度が0だったコミュニティペアは、図から除外している。
 該当するコミュニティペアはstart-loop、helix-loop、new-loopである。
@@ -336,7 +344,7 @@ community impact scoreが目立ったリガンドやgタンパク質結合部位
 
 %しかし
 \section{シグナル伝達機構の考察}
-以下は、完全に仮説なので、この仮説を裏付ける先行研究が発見されなければ、削除
+（以下は、完全に仮説なので、この仮説を裏付ける先行研究が発見されなければ、削除）
 
 ここまでinactive状態とactive状態におけるコミュニティ内密度とコミュニティ間密度、active状態のネットワークにおけるノードがactiveネットワーク全体または所属するコミュニティの接続性に与える影響について解析をしてきた。
 これらの解析結果を踏まえると、以下のような段階的なシグナル伝達機構が考えられる。
