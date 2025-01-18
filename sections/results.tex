@@ -1,8 +1,46 @@
 \section{分子動力学(MD)シミュレーション}
 
-%MDの信頼性、同定されたDOWSERによる結晶水/保存されている結晶水の画像と説明
-$\beta_2$ARのinactive状態active状態双方で1000psトラジェクトリを計10本取得した。
-また保存された結晶水はinactive状態で7個、active状態で5個同定された。
+分子動力学シミュレーションにより、$\beta_2$ARのinactive状態active状態双方で1000psトラジェクトリを計10本取得した。
+
+\subsubsection{$\beta_2$ARの活性化による構造変化}
+アゴニストが結合した$\beta_2$ARは、顕著な構造変化を引き起こす\cite{rasmussen2011crystal}ことがわかっている。
+%参考文献：β2ARの構造変化
+%2011「β2アドレナリン受容体-Gsタンパク質複合体の結晶構造」
+%https://www.nature.com/articles/nature10361
+主な変化として以下が挙げられる：
+\begin{enumerate}
+    \item \textbf{TM6の移動}: TM6の細胞質側末端が、約14Å外側に移動する。この移動により、Gタンパク質が結合するための空間が確保される。
+    \item \textbf{TM5の変化}: TM5の細胞質側末端部分において、αヘリックスが2回転分引き伸ばされる。これにより、シグナル伝達に関与する構造が再編成される。
+\end{enumerate}
+
+本研究で得られた、シミュレーション中の原子の平均的な配置を示した$\beta_2$ARのinactive構造とactive構造を重ね合わせたのが以下の図である。
+%inactiveとactiveの重ね合わせ
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.45\textwidth} % 各図の幅を調整
+    \centering
+    \includegraphics[width=\textwidth]{system-all-with-label.png}
+    \caption{$\beta_2$ARのTM5,TM6,TM7の変化。}
+    \label{fig:fitting_TM}
+  \end{subfigure}
+  \hspace{0.05\textwidth} % 図の間のスペース
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{system-all-with-label-detail.png}
+    \caption{$\beta_2$ARのTM5,TM6,TM7の変化の詳細。}
+    \label{fig:fitting_TM_detail}
+  \end{subfigure}
+  \caption{$\beta_2$ARのinactive構造(グレー)とactive構造(色付き)の重ね合わせ。}
+  \label{fig:fitting-all}
+\end{figure}
+
+TM6の細胞質側末端にある残基のCα原子が、TM7から離れる方向に12.9Å移動する様子が観察された。
+TM5の細胞質側末端部分は2残基分の延長が観察されるとともに、末端のCα原子がTM6から離れる方向に3.3Å移動する様子が観察された。
+また、TM7の細胞質側末端にある残基のCα原子が、タンパク質の内側に近づく方向に2.6Å移動する様子が観察された。
+
+\subsubsection{$\beta_2$ARの保存された結晶水}
+DOWSERによって検出された、エネルギー的に安定な水分子は、inactive状態で14869個、active状態で18876個同定された。
+そのうち、シミュレーション中で保存されている結晶水はinactive状態で7個、active状態で5個同定された。
 
 \begin{figure}[htbp]
     \centering
@@ -24,13 +62,38 @@ $\beta_2$ARのinactive状態active状態双方で1000psトラジェクトリを�
   \end{figure}
 
 \newpage
+
+%inactiveとactiveで保存されている結晶水
+
+
 %先行研究との比較
 
 \section{$\beta_2$ARのinactiveおよびactive状態のコミュニティ検出}
 
+得られた座標データを基に、ネットワークのエッジの重みとして用いる残基間最短距離の2乗逆数の平均\langle \frac{1}{d^2} \rangle を計算した。
+
+エッジを以下の条件で形成させた後、エッジの重みを加え、inactive状態active状態双方のネットワークを構築した。
+1. 残基ペア間の最短距離が3\,\text{\AA}未満である場合、エッジを形成する。
+2. アミノ酸配列上で隣接する残基感のエッジは削除する。
+
+以下が構築されたネットワークの詳細である。
+\begin{table}[!ht]
+    \centering
+    \caption{ネットワーク上のノード数と、残基ペア間の最短距離が3\,\text{\AA}未満のエッジ数}
+    \begin{tabular}{lll}
+      \hline
+      モデル名          & ノード数  & エッジ数 \\
+      \hline 
+      inactive(3P0G)  &  351 &  16336 \\ 
+      active(2RH1)    &  349 &  15433 \\ 
+    \end{tabular}
+    \label{tab:network_size}
+  \end{table}
+
+構築されたネットワークを基に、コミュニティ検出を行った。
 \subsubsection{Louvain法の信頼性}
 
-Louvain法の結果の信頼性は、モジュラリティ$Q$の値を用いて評価される。
+ネットワークにおけるコミュニティ構造を検出するために用いたLouvain法の結果の信頼性は、モジュラリティ$Q$の値を用いて評価される。
 モジュラリティ$Q$の値は通常-1から1の範囲を取り、以下のように解釈される：
 
 \begin{itemize}
