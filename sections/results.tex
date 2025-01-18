@@ -11,14 +11,14 @@ $\beta_2$ARのinactive状態active状態双方で1000psトラジェクトリを�
       \centering
       \includegraphics[width=\textwidth]{inactive_saved_water.png}
       \caption{$\beta_2$ARのinactive状態における保存された結晶水。}
-      \label{fig:inactive_system}
+      \label{fig:inactive_water}
     \end{subfigure}
     \hspace{0.05\textwidth} % 図の間のスペース
     \begin{subfigure}{0.45\textwidth}
       \centering
       \includegraphics[width=\textwidth]{active_saved_water.png}
       \caption{$\beta_2$ARのactive状態における保存された結晶水。}
-      \label{fig:active_system}
+      \label{fig:active_water}
     \end{subfigure}
     \caption{保存された結晶水}
     \label{fig:water-all}
@@ -57,24 +57,24 @@ inactive状態とactive状態のモジュラリティ値はどちらも正の値
 
 \subsection{Louvain法で検出されたコミュニティ}
 
-図\ref{fig:inactive}には$\beta_2$ARのinactive構造で検出されたコミュニティ、図\ref{fig:active}にはactive構造で検出されたコミュニティを示す。
+図\ref{fig:inactive_community}には$\beta_2$ARのinactive構造で検出されたコミュニティ、図\ref{fig:active_community}にはactive構造で検出されたコミュニティを示す。
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}{0.45\textwidth} % 各図の幅を調整
       \centering
       \includegraphics[width=\textwidth]{inactive.png}
       \caption{$\beta_2$ARのinactive状態において検出されたコミュニティ構造を色分けして示した図。各色と名付けたコミュニティは以下に表す：黒(start)、シアン(end)、白(helix)、ピンク(back)、グレー(loop)、黄色(ligand)、青(gprotein)。}
-      \label{fig:inactive_water}
+      \label{fig:inactive_community}
     \end{subfigure}
     \hspace{0.05\textwidth} % 図の間のスペース
     \begin{subfigure}{0.45\textwidth}
       \centering
       \includegraphics[width=\textwidth]{active.png}
       \caption{$\beta_2$ARのactive状態において検出されたコミュニティ構造を色分けして示した図。各色と名付けたコミュニティは以下に表す：黒(start)、シアン(end)、白(helix)、ピンク(back)、グレー(loop)、黄色(ligand)、青(gprotein)、赤(new)。}
-      \label{fig:active_water}
+      \label{fig:active_community}
     \end{subfigure}
     \caption{コミュニティ構造}
-    \label{fig:water-all}
+    \label{fig:community-all}
   \end{figure}
 
 まず双方のコミュニティに共通することとして、リガンド結合部位と活性部位であるGタンパク質結合部位に対応する独立したコミュニティが、黄色(ligand)、青(gprotein)として検出された。
@@ -189,7 +189,7 @@ D_{\text{inter}} = \frac{\sum_{\substack{u \in C_i \\ v \in C_j}} w_{uv}}{\sum_{
     \centering
     \includegraphics[width=0.8\textwidth]{internal_modularities.png}
     \caption{$\beta_2$ARのinactive状態とactive状態において検出されたコミュニティのコミュニティ間エッジ密度を示した図。コミュニティの名称は、図\ref{fig:inactive}と図\ref{fig:active}で名付けたものである。}
-    \label{fig:internal}
+    \label{fig:inter}
 \end{figure}
 
 \newpage
