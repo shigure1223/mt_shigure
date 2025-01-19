@@ -910,6 +910,193 @@
       \verb https://www.sciencedirect.com/science/article/pii/S002192582087389X
       \endverb
     \endentry
+    \entry{nygaard2009ligand}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=0ca5eda524ed352fca0c22f2ac923123}{%
+           family={Nygaard},
+           familyi={N\bibinitperiod},
+           given={Rie},
+           giveni={R\bibinitperiod}}}%
+        {{hash=7808c574631786bb28cb9d744b183a5d}{%
+           family={Frimurer},
+           familyi={F\bibinitperiod},
+           given={Thomas\bibnamedelima M.},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=8e5c252f84ef77e9fd1219432594884b}{%
+           family={Holst},
+           familyi={H\bibinitperiod},
+           given={Birgitte},
+           giveni={B\bibinitperiod}}}%
+        {{hash=b086a1bb6cb2c2fc8686a3c0d62ff459}{%
+           family={Rosenkilde},
+           familyi={R\bibinitperiod},
+           given={Mette\bibnamedelima M.},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=67a003ced35b33a941a4d67416f85d85}{%
+           family={Schwartz},
+           familyi={S\bibinitperiod},
+           given={Thue\bibnamedelima W.},
+           giveni={T\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9a21a606a0d4bc6b985b09cba4c0a98f}
+      \strng{fullhash}{769a0e842ed0f4300273c6cc152b06d2}
+      \strng{fullhashraw}{769a0e842ed0f4300273c6cc152b06d2}
+      \strng{bibnamehash}{769a0e842ed0f4300273c6cc152b06d2}
+      \strng{authorbibnamehash}{769a0e842ed0f4300273c6cc152b06d2}
+      \strng{authornamehash}{9a21a606a0d4bc6b985b09cba4c0a98f}
+      \strng{authorfullhash}{769a0e842ed0f4300273c6cc152b06d2}
+      \strng{authorfullhashraw}{769a0e842ed0f4300273c6cc152b06d2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{\textit{Trends Pharmacol. Sci.}}
+      \field{number}{5}
+      \field{title}{Ligand binding and micro-switches in 7TM receptor structures}
+      \field{volume}{\textit{30}}
+      \field{year}{\textbf{2009}}
+      \field{pages}{249\bibrangedash 259}
+      \range{pages}{11}
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0165614709000546
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0165614709000546
+      \endverb
+    \endentry
+    \entry{lee2013mapping}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=1a9daf9620ad950b169d0ac857073d4a}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Yoonji},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=91e6b7adab7c41d4d0a0a9257bbe47f3}{%
+           family={Choi},
+           familyi={C\bibinitperiod},
+           given={Sun},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e64ff16b7b2ce289cfd8b8f4afa86bfd}{%
+           family={Hyeon},
+           familyi={H\bibinitperiod},
+           given={Changbong},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{52f24aa0d0b898ac2546a39a1afe191b}
+      \strng{fullhash}{deef75b2a4ad0064c4feda1fe8764887}
+      \strng{fullhashraw}{deef75b2a4ad0064c4feda1fe8764887}
+      \strng{bibnamehash}{deef75b2a4ad0064c4feda1fe8764887}
+      \strng{authorbibnamehash}{deef75b2a4ad0064c4feda1fe8764887}
+      \strng{authornamehash}{52f24aa0d0b898ac2546a39a1afe191b}
+      \strng{authorfullhash}{deef75b2a4ad0064c4feda1fe8764887}
+      \strng{authorfullhashraw}{deef75b2a4ad0064c4feda1fe8764887}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{\textit{Proteins: Structure, Function, and Bioinformatics}}
+      \field{number}{5}
+      \field{title}{Mapping the intramolecular signal transduction of G-protein coupled receptors}
+      \field{volume}{\textit{82}}
+      \field{year}{\textbf{2014}}
+      \field{pages}{727\bibrangedash 743}
+      \range{pages}{17}
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/10.1002/prot.24451
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/10.1002/prot.24451
+      \endverb
+    \endentry
+    \entry{angel2009conserved}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=975b07c9a5fb2ffe4c1c5a588d24da11}{%
+           family={Angel},
+           familyi={A\bibinitperiod},
+           given={Thomas\bibnamedelima E.},
+           giveni={T\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=d6799e6f67e6e222082a49b5653bf331}{%
+           family={Chance},
+           familyi={C\bibinitperiod},
+           given={Mark\bibnamedelima R.},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=673b0f5d52008ad1441686dd78512e9a}{%
+           family={Palczewski},
+           familyi={P\bibinitperiod},
+           given={Krzysztof},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{aee6f9c3cdfe8ae3b459962c3a7ffae8}
+      \strng{fullhash}{6e03d5eaa7d934e4de567d8a45f61fc5}
+      \strng{fullhashraw}{6e03d5eaa7d934e4de567d8a45f61fc5}
+      \strng{bibnamehash}{6e03d5eaa7d934e4de567d8a45f61fc5}
+      \strng{authorbibnamehash}{6e03d5eaa7d934e4de567d8a45f61fc5}
+      \strng{authornamehash}{aee6f9c3cdfe8ae3b459962c3a7ffae8}
+      \strng{authorfullhash}{6e03d5eaa7d934e4de567d8a45f61fc5}
+      \strng{authorfullhashraw}{6e03d5eaa7d934e4de567d8a45f61fc5}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{\textit{Proceedings of the National Academy of Sciences}}
+      \field{number}{21}
+      \field{title}{Conserved waters mediate structural and functional activation of family A (rhodopsin-like) G protein-coupled receptors}
+      \field{volume}{\textit{106}}
+      \field{year}{\textbf{2009}}
+      \field{pages}{8555\bibrangedash 8560}
+      \range{pages}{6}
+      \verb{urlraw}
+      \verb https://www.pnas.org/doi/10.1073/pnas.0903545106
+      \endverb
+      \verb{url}
+      \verb https://www.pnas.org/doi/10.1073/pnas.0903545106
+      \endverb
+    \endentry
+    \entry{buchenberg2015}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=f3bd947c4f2b0799d18691f677cf81ec}{%
+           family={Buchenberg},
+           familyi={B\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{hash=fd9d413dbd03e5a0e8f083bb720bcf6c}{%
+           family={Leitner},
+           familyi={L\bibinitperiod},
+           given={David\bibnamedelima M.},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=298599e91b15cd99d965ff7812a6f5ad}{%
+           family={Stock},
+           familyi={S\bibinitperiod},
+           given={Gerhard},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{4d82a86cf38791e4a77fdcc955a489da}
+      \strng{fullhash}{ab44596055be5de9c8ef903fe02bd929}
+      \strng{fullhashraw}{ab44596055be5de9c8ef903fe02bd929}
+      \strng{bibnamehash}{ab44596055be5de9c8ef903fe02bd929}
+      \strng{authorbibnamehash}{ab44596055be5de9c8ef903fe02bd929}
+      \strng{authornamehash}{4d82a86cf38791e4a77fdcc955a489da}
+      \strng{authorfullhash}{ab44596055be5de9c8ef903fe02bd929}
+      \strng{authorfullhashraw}{ab44596055be5de9c8ef903fe02bd929}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{\textit{J. Phys. Chem. Lett.}}
+      \field{number}{1}
+      \field{title}{Scaling Rules for Vibrational Energy Transport in Globular Proteins}
+      \field{volume}{\textit{7}}
+      \field{year}{\textbf{2015}}
+      \field{pages}{25\bibrangedash 30}
+      \range{pages}{6}
+      \verb{urlraw}
+      \verb https://pubs.acs.org/doi/10.1021/acs.jpclett.5b02514
+      \endverb
+      \verb{url}
+      \verb https://pubs.acs.org/doi/10.1021/acs.jpclett.5b02514
+      \endverb
+    \endentry
     \entry{rasmussen2011crystal}{article}{}{}
       \name{author}{20}{}{%
         {{hash=d06ea36a31c91fb86d074c7425275c60}{%
@@ -1022,8 +1209,8 @@
       \strng{authorfullhash}{b88ca78e81b6cf69adf6db33c820907c}
       \strng{authorfullhashraw}{b88ca78e81b6cf69adf6db33c820907c}
       \field{extraname}{2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{\textit{Nature}}
@@ -1037,193 +1224,6 @@
       \endverb
       \verb{url}
       \verb https://www.nature.com/articles/nature10361
-      \endverb
-    \endentry
-    \entry{nygaard2009ligand}{article}{}{}
-      \name{author}{5}{}{%
-        {{hash=0ca5eda524ed352fca0c22f2ac923123}{%
-           family={Nygaard},
-           familyi={N\bibinitperiod},
-           given={Rie},
-           giveni={R\bibinitperiod}}}%
-        {{hash=7808c574631786bb28cb9d744b183a5d}{%
-           family={Frimurer},
-           familyi={F\bibinitperiod},
-           given={Thomas\bibnamedelima M.},
-           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-        {{hash=8e5c252f84ef77e9fd1219432594884b}{%
-           family={Holst},
-           familyi={H\bibinitperiod},
-           given={Birgitte},
-           giveni={B\bibinitperiod}}}%
-        {{hash=b086a1bb6cb2c2fc8686a3c0d62ff459}{%
-           family={Rosenkilde},
-           familyi={R\bibinitperiod},
-           given={Mette\bibnamedelima M.},
-           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-        {{hash=67a003ced35b33a941a4d67416f85d85}{%
-           family={Schwartz},
-           familyi={S\bibinitperiod},
-           given={Thue\bibnamedelima W.},
-           giveni={T\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
-      }
-      \strng{namehash}{9a21a606a0d4bc6b985b09cba4c0a98f}
-      \strng{fullhash}{769a0e842ed0f4300273c6cc152b06d2}
-      \strng{fullhashraw}{769a0e842ed0f4300273c6cc152b06d2}
-      \strng{bibnamehash}{769a0e842ed0f4300273c6cc152b06d2}
-      \strng{authorbibnamehash}{769a0e842ed0f4300273c6cc152b06d2}
-      \strng{authornamehash}{9a21a606a0d4bc6b985b09cba4c0a98f}
-      \strng{authorfullhash}{769a0e842ed0f4300273c6cc152b06d2}
-      \strng{authorfullhashraw}{769a0e842ed0f4300273c6cc152b06d2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{\textit{Trends Pharmacol. Sci.}}
-      \field{number}{5}
-      \field{title}{Ligand binding and micro-switches in 7TM receptor structures}
-      \field{volume}{\textit{30}}
-      \field{year}{\textbf{2009}}
-      \field{pages}{249\bibrangedash 259}
-      \range{pages}{11}
-      \verb{urlraw}
-      \verb https://www.sciencedirect.com/science/article/pii/S0165614709000546
-      \endverb
-      \verb{url}
-      \verb https://www.sciencedirect.com/science/article/pii/S0165614709000546
-      \endverb
-    \endentry
-    \entry{lee2013mapping}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=1a9daf9620ad950b169d0ac857073d4a}{%
-           family={Lee},
-           familyi={L\bibinitperiod},
-           given={Yoonji},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=91e6b7adab7c41d4d0a0a9257bbe47f3}{%
-           family={Choi},
-           familyi={C\bibinitperiod},
-           given={Sun},
-           giveni={S\bibinitperiod}}}%
-        {{hash=e64ff16b7b2ce289cfd8b8f4afa86bfd}{%
-           family={Hyeon},
-           familyi={H\bibinitperiod},
-           given={Changbong},
-           giveni={C\bibinitperiod}}}%
-      }
-      \strng{namehash}{52f24aa0d0b898ac2546a39a1afe191b}
-      \strng{fullhash}{deef75b2a4ad0064c4feda1fe8764887}
-      \strng{fullhashraw}{deef75b2a4ad0064c4feda1fe8764887}
-      \strng{bibnamehash}{deef75b2a4ad0064c4feda1fe8764887}
-      \strng{authorbibnamehash}{deef75b2a4ad0064c4feda1fe8764887}
-      \strng{authornamehash}{52f24aa0d0b898ac2546a39a1afe191b}
-      \strng{authorfullhash}{deef75b2a4ad0064c4feda1fe8764887}
-      \strng{authorfullhashraw}{deef75b2a4ad0064c4feda1fe8764887}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{\textit{Proteins: Structure, Function, and Bioinformatics}}
-      \field{number}{5}
-      \field{title}{Mapping the intramolecular signal transduction of G-protein coupled receptors}
-      \field{volume}{\textit{82}}
-      \field{year}{\textbf{2014}}
-      \field{pages}{727\bibrangedash 743}
-      \range{pages}{17}
-      \verb{urlraw}
-      \verb https://onlinelibrary.wiley.com/doi/10.1002/prot.24451
-      \endverb
-      \verb{url}
-      \verb https://onlinelibrary.wiley.com/doi/10.1002/prot.24451
-      \endverb
-    \endentry
-    \entry{angel2009conserved}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=975b07c9a5fb2ffe4c1c5a588d24da11}{%
-           family={Angel},
-           familyi={A\bibinitperiod},
-           given={Thomas\bibnamedelima E.},
-           giveni={T\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
-        {{hash=d6799e6f67e6e222082a49b5653bf331}{%
-           family={Chance},
-           familyi={C\bibinitperiod},
-           given={Mark\bibnamedelima R.},
-           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
-        {{hash=673b0f5d52008ad1441686dd78512e9a}{%
-           family={Palczewski},
-           familyi={P\bibinitperiod},
-           given={Krzysztof},
-           giveni={K\bibinitperiod}}}%
-      }
-      \strng{namehash}{aee6f9c3cdfe8ae3b459962c3a7ffae8}
-      \strng{fullhash}{6e03d5eaa7d934e4de567d8a45f61fc5}
-      \strng{fullhashraw}{6e03d5eaa7d934e4de567d8a45f61fc5}
-      \strng{bibnamehash}{6e03d5eaa7d934e4de567d8a45f61fc5}
-      \strng{authorbibnamehash}{6e03d5eaa7d934e4de567d8a45f61fc5}
-      \strng{authornamehash}{aee6f9c3cdfe8ae3b459962c3a7ffae8}
-      \strng{authorfullhash}{6e03d5eaa7d934e4de567d8a45f61fc5}
-      \strng{authorfullhashraw}{6e03d5eaa7d934e4de567d8a45f61fc5}
-      \field{extraname}{2}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{\textit{Proceedings of the National Academy of Sciences}}
-      \field{number}{21}
-      \field{title}{Conserved waters mediate structural and functional activation of family A (rhodopsin-like) G protein-coupled receptors}
-      \field{volume}{\textit{106}}
-      \field{year}{\textbf{2009}}
-      \field{pages}{8555\bibrangedash 8560}
-      \range{pages}{6}
-      \verb{urlraw}
-      \verb https://www.pnas.org/doi/10.1073/pnas.0903545106
-      \endverb
-      \verb{url}
-      \verb https://www.pnas.org/doi/10.1073/pnas.0903545106
-      \endverb
-    \endentry
-    \entry{buchenberg2015}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=f3bd947c4f2b0799d18691f677cf81ec}{%
-           family={Buchenberg},
-           familyi={B\bibinitperiod},
-           given={Sebastian},
-           giveni={S\bibinitperiod}}}%
-        {{hash=fd9d413dbd03e5a0e8f083bb720bcf6c}{%
-           family={Leitner},
-           familyi={L\bibinitperiod},
-           given={David\bibnamedelima M.},
-           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-        {{hash=298599e91b15cd99d965ff7812a6f5ad}{%
-           family={Stock},
-           familyi={S\bibinitperiod},
-           given={Gerhard},
-           giveni={G\bibinitperiod}}}%
-      }
-      \strng{namehash}{4d82a86cf38791e4a77fdcc955a489da}
-      \strng{fullhash}{ab44596055be5de9c8ef903fe02bd929}
-      \strng{fullhashraw}{ab44596055be5de9c8ef903fe02bd929}
-      \strng{bibnamehash}{ab44596055be5de9c8ef903fe02bd929}
-      \strng{authorbibnamehash}{ab44596055be5de9c8ef903fe02bd929}
-      \strng{authornamehash}{4d82a86cf38791e4a77fdcc955a489da}
-      \strng{authorfullhash}{ab44596055be5de9c8ef903fe02bd929}
-      \strng{authorfullhashraw}{ab44596055be5de9c8ef903fe02bd929}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{\textit{J. Phys. Chem. Lett.}}
-      \field{number}{1}
-      \field{title}{Scaling Rules for Vibrational Energy Transport in Globular Proteins}
-      \field{volume}{\textit{7}}
-      \field{year}{\textbf{2015}}
-      \field{pages}{25\bibrangedash 30}
-      \range{pages}{6}
-      \verb{urlraw}
-      \verb https://pubs.acs.org/doi/10.1021/acs.jpclett.5b02514
-      \endverb
-      \verb{url}
-      \verb https://pubs.acs.org/doi/10.1021/acs.jpclett.5b02514
       \endverb
     \endentry
   \enddatalist

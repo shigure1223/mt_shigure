@@ -42,7 +42,7 @@ TM5の細胞質側末端部分は2残基分の延長が観察されるととも�
 
 \subsubsection{$\beta_2$ARの保存された結晶水}
 DOWSERによって検出された、エネルギー的に安定な水分子は、inactive状態で14869個、active状態で18876個同定された。
-そのうち、シミュレーション中で保存されている結晶水はinactive状態で7個、active状態で5個同定された。
+そのうち、シミュレーション中で保存されている結晶水はinactive状態で7個、active状態で6個同定された。
 
 \begin{figure}[htbp]
     \centering
@@ -66,9 +66,20 @@ DOWSERによって検出された、エネルギー的に安定な水分子は�
 \newpage
 
 %inactiveとactiveで保存されている結晶水
+シミュレーション中で保存されているinactive状態の7個の結晶水、active状態の6個の結晶水のうち、
+双方で共通の位置に存在していた結晶水は4つあったため、残基番号をそれぞれ(344,346,347,348)と定めた。
+それ以外の結晶水は、(355~359)の残基番号を振り分けた。
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{xwater_fitting.png}
+  \caption{保存された結晶水のうち、$\beta_2$ARのinactive状態とactive状態の双方で共通の位置に存在する水分子。}
+  \label{fig:xwater_fitting}
+\end{figure}
 
-%先行研究との比較
+\newpage
+
+%水分子、先行研究との比較
 
 \section{$\beta_2$ARのinactiveおよびactive状態のコミュニティ検出}
 
@@ -86,7 +97,7 @@ DOWSERによって検出された、エネルギー的に安定な水分子は�
       \hline
       モデル名          & ノード数  & エッジ数 \\
       \hline 
-      inactive(3P0G)  &  351 &  16336 \\ 
+      inactive(3P0G)  &  351 &  16331 \\ 
       active(2RH1)    &  349 &  15433 \\ 
     \end{tabular}
     \label{tab:network_size}
@@ -125,16 +136,16 @@ inactive状態とactive状態のモジュラリティ値はどちらも正の値
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}{0.45\textwidth} % 各図の幅を調整
+    \begin{subfigure}{0.48\textwidth} % 各図の幅を調整
       \centering
-      \includegraphics[width=\textwidth]{inactive.png}
+      \includegraphics[width=\textwidth]{inactive_with_label.png}
       \caption{$\beta_2$ARのinactive状態において検出されたコミュニティ構造を色分けして示した図。各色と名付けたコミュニティは以下に表す：黒(start)、シアン(end)、白(helix)、ピンク(back)、グレー(loop)、黄色(ligand)、青(gprotein)。}
       \label{fig:inactive_community}
     \end{subfigure}
-    \hspace{0.05\textwidth} % 図の間のスペース
-    \begin{subfigure}{0.45\textwidth}
+    \hspace{0.02\textwidth} % 図の間のスペース
+    \begin{subfigure}{0.48\textwidth}
       \centering
-      \includegraphics[width=\textwidth]{active.png}
+      \includegraphics[width=\textwidth]{active_with_label.png}
       \caption{$\beta_2$ARのactive状態において検出されたコミュニティ構造を色分けして示した図。各色と名付けたコミュニティは以下に表す：黒(start)、シアン(end)、白(helix)、ピンク(back)、グレー(loop)、黄色(ligand)、青(gprotein)、赤(new)。}
       \label{fig:active_community}
     \end{subfigure}
@@ -147,7 +158,7 @@ inactive状態とactive状態のモジュラリティ値はどちらも正の値
 まず双方のコミュニティに共通することとして、リガンド結合部位と活性部位であるGタンパク質結合部位に対応する独立したコミュニティが、黄色(ligand)、青(gprotein)として検出された。
 また図\ref{fig:inactive}から図\ref{fig:active}への変化として、青(gprotein)コミュニティの再編成が起きていることと、赤(new)コミュニティが新規に形成されたことが挙げられる。
 
-青(gprotein)コミュニティと赤(new)コミュニティに属する残基の比較を行うと、以下のようになる。
+%青(gprotein)コミュニティと赤(new)コミュニティに属する残基の比較を行うと、以下のようになる。
 
 %比較したtableを追加
 
@@ -232,9 +243,9 @@ D_{\text{internal}} = \frac{\sum_{(u,v) \in E_C} w_{uv}}{\sum_{(u,v) \in E_C} w_
     \item \( D_{\text{internal}} \) が 1 に近い：コミュニティ内のノード間には強い結びつきがあり、密に相互作用している。
 \end{itemize}
 
-inactive構造では、loop, newコミュニティのコミュニティ内エッジ密度が特に大きい値を示した。
-一方でactive構造においては、全てのコミュニティのコミュニティ内エッジ密度が1.0付近という値を示し、特に強い結びつきを形成している構造であることがわかる。
-inactive構造からactive構造への変化に着目すると、どのコミュニティも値が大幅に大きくなり、特にgproteinコミュニティが顕著であった。
+inactive構造では、end, ligand, startコミュニティのコミュニティ内エッジ密度が、相対的に低い値を示した。
+しかしactive構造で新たに出現したnewコミュニティと共に、全てのコミュニティのコミュニティ内エッジ密度が1.0付近という値を示した。
+活性化に伴って、すべてのコミュニティの内部が強い結びつきを形成している構造に変化したことがわかる。
 
 \subsubsection{コミュニティ間エッジ密度}
 コミュニティ間エッジ密度$D_{\text{inter}}$の計算式は以下のように表される。
@@ -254,7 +265,7 @@ D_{\text{inter}} = \frac{\sum_{\substack{u \in C_i \\ v \in C_j}} w_{uv}}{\sum_{
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{internal_modularities.png}
+    \includegraphics[width=0.8\textwidth]{interedge_modularities.png}
     \caption{$\beta_2$ARのinactive状態とactive状態において検出されたコミュニティのコミュニティ間エッジ密度を示した図。コミュニティの名称は、図\ref{fig:inactive}と図\ref{fig:active}で名付けたものである。}
     \label{fig:inter}
 \end{figure}
@@ -270,11 +281,22 @@ D_{\text{inter}} = \frac{\sum_{\substack{u \in C_i \\ v \in C_j}} w_{uv}}{\sum_{
     \item \( Q \) が 1 に近い：コミュニティ間で多数のエッジが存在し、コミュニティ間の結びつきが強い。
 \end{itemize}
 
-inactive状態では、コミュニティペアback-gprotein、helix-start、end-back、start-ligandが高い値を示した。
-これらのコミュニティペアは隣り合っており、妥当な結果を示している。
-active状態では、リガンド結合部位と活性部位の間に存在するコミュニティback, gprotein, ligand, newを含むコミュニティペアの値が特に顕著に高い値を示した。
-特にnewコミュニティとペアを形成しているコミュニティペアに関しては、全て0.6以上と高い値を示した。
-inactive構造からactive構造への変化に着目すると、リガンド結合部位と活性部位を結ぶ経路から離れているコミュニティペア(end,start)以外のどのコミュニティも、値が大幅に大きくなった。
+inactive状態では最も高い値で0.52であったのが、
+active状態になると15ものコミュニティペアが、0.5以上の値をとった。
+そのうちnewに関わるコミュニティペアは6つ、gproteinは5つ、backとligandはそれぞれ4つ含まれていた。
+
+inactive構造からactive構造へのコミュニティ間エッジ密度の変化を以下に示した。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{interedge_modularities_diff.png}
+  \caption{$\beta_2$ARの各コミュニティのコミュニティ間エッジ密度の変化を示した図。コミュニティの名称は、図\ref{fig:inactive}と図\ref{fig:active}で名付けたものである。}
+  \label{fig:inter_diff}
+\end{figure}
+
+\newpage
+
+リガンド結合部位と活性部位を結ぶ経路上のコミュニティペア(loop-gprotein,gprotein-ligand,back-ligand,back-helix,ligand-helix)のコミュニティ間エッジ密度が0.35以上変化したことがわかる。
 
 \subsubsection{inactive状態とactive状態の全体密度、コミュニティ密度の考察}
 
@@ -288,7 +310,9 @@ inactive構造からactive構造への変化に着目すると、リガンド結
     \item 全体エッジ密度：増加
 \end{itemize}
 
-inactive状態では、loopコミュニティやnewコミュニティにおいて相互作用がコミュニティ内部に局在化しており、gproteinコミュニティは内部の結びつきが弱かった。
+
+
+loopコミュニティやnewコミュニティにおいて相互作用がコミュニティ内部に局在化しており、gproteinコミュニティは内部の結びつきが弱かった。
 またコミュニティ間のエッジ密度が低いため、各コミュニティの協調的な動きが抑制されている状態が観察された。
 一方でactive状態になると、ほぼすべてのコミュニティ内の相互作用が増加し、コミュニティ間の相互作用も大幅に増加し、その結果全体密度も増加する状態が観察された。
 特にnewコミュニティに関わるコミュニティペア間の相互作用の強さが特徴的であった。
