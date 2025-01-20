@@ -1226,6 +1226,45 @@
       \verb https://www.nature.com/articles/nature10361
       \endverb
     \endentry
+    \entry{poudel2021activation}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=c040de3eb861d94e9ce10b4a37d54890}{%
+           family={Poudel},
+           familyi={P\bibinitperiod},
+           given={Humanath},
+           giveni={H\bibinitperiod}}}%
+        {{hash=fd9d413dbd03e5a0e8f083bb720bcf6c}{%
+           family={Leitner},
+           familyi={L\bibinitperiod},
+           given={David\bibnamedelima M.},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{4a2bb2678f7e7f2acea7e7d5dd2a9ec5}
+      \strng{fullhash}{4a2bb2678f7e7f2acea7e7d5dd2a9ec5}
+      \strng{fullhashraw}{4a2bb2678f7e7f2acea7e7d5dd2a9ec5}
+      \strng{bibnamehash}{4a2bb2678f7e7f2acea7e7d5dd2a9ec5}
+      \strng{authorbibnamehash}{4a2bb2678f7e7f2acea7e7d5dd2a9ec5}
+      \strng{authornamehash}{4a2bb2678f7e7f2acea7e7d5dd2a9ec5}
+      \strng{authorfullhash}{4a2bb2678f7e7f2acea7e7d5dd2a9ec5}
+      \strng{authorfullhashraw}{4a2bb2678f7e7f2acea7e7d5dd2a9ec5}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{\textit{J. Phys. Chem. B}}
+      \field{number}{24}
+      \field{title}{Activation-Induced Reorganization of Energy Transport Networks in the β2 Adrenergic Receptor}
+      \field{volume}{\textit{125}}
+      \field{year}{\textbf{2021}}
+      \field{pages}{6490\bibrangedash 6498}
+      \range{pages}{9}
+      \verb{urlraw}
+      \verb https://pubs.acs.org/doi/10.1021/acs.jpcb.1c02648
+      \endverb
+      \verb{url}
+      \verb https://pubs.acs.org/doi/10.1021/acs.jpcb.1c02648
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

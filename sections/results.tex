@@ -12,7 +12,7 @@
 %https://pubs.acs.org/doi/full/10.1021/acs.jpcb.1c03412
 主な変化として以下が挙げられる：
 \begin{enumerate}
-    \item \textbf{TM6の外側への動き}: TM6の細胞質側末端が、約14Å外側に移動する。この移動により、Gタンパク質が結合するための空間が確保される。
+    \item \textbf{TM6の外側への動き}: TM6の細胞質側末端が、約14Å外側に移動する。
     \item \textbf{TM5の外側への動き}: TM5の細胞質側末端が、外側に移動する。
     \item \textbf{TM7の内側への動き}: TM7の細胞質側末端が、内側に移動する。
 \end{enumerate}
@@ -34,7 +34,7 @@
     \caption{$\beta_2$ARのTM5,TM6,TM7の変化の詳細。}
     \label{fig:fitting_TM_detail}
   \end{subfigure}
-  \caption{$\beta_2$ARのinactive構造(グレー)とactive構造(色付き)の重ね合わせ。}
+  \caption{$\beta_2$ARのinactive構造(灰色)とactive構造(色付き)の重ね合わせ。}
   \label{fig:fitting-all}
 \end{figure}
 
@@ -103,7 +103,7 @@ DOWSERによって検出された、エネルギー的に安定な水分子は�
       \hline
       モデル名          & ノード数  & エッジ数 \\
       \hline 
-      inactive(2RH1)  &  351 &  16331 \\ 
+      inactive(2RH1)  &  351 &  16332 \\ 
       active(3P0G)    &  349 &  15433 \\ 
     \end{tabular}
     \label{tab:network_size}
@@ -125,12 +125,12 @@ DOWSERによって検出された、エネルギー的に安定な水分子は�
 
 \paragraph{試行回数100回におけるモジュラリティ値の平均および標準偏差}
 \begin{itemize}
-    \item inactive状態: \( Q = 0.5172 \pm 0.0059 \)
+    \item inactive状態: \( Q = 0.5163 \pm 0.0054 \)
     \item active状態: \( Q = 0.5239 \pm 0.0044 \)
 \end{itemize}
 さらに、モジュラリティ値の標準誤差は以下の通りです：
 \begin{itemize}
-    \item inactive状態: \( \pm 0.0006 \)
+    \item inactive状態: \( \pm 0.0005 \)
     \item active状態: \( \pm 0.0004 \)
 \end{itemize}
 
@@ -142,7 +142,7 @@ inactive状態とactive状態のモジュラリティ値はどちらも正の値
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}{0.48\textwidth} % 各図の幅を調整
+    \begin{subfigure}{0.40\textwidth} % 各図の幅を調整
       \centering
       \includegraphics[width=\textwidth]{inactive_with_label.png}
       \caption{inactive状態において検出されたコミュニティ構造を色分けして示した図。各色と名付けたコミュニティは以下に表す：黒(start)、シアン(end)、白(helix)、ピンク(back)、グレー(loop)、黄色(ligand)、青(gprotein)。}
@@ -162,14 +162,26 @@ inactive状態とactive状態のモジュラリティ値はどちらも正の値
 \newpage
 
 まず双方のコミュニティに共通することとして、リガンド結合部位と活性部位であるGタンパク質結合部位に対応する独立したコミュニティが、黄色(ligand)、青(gprotein)として検出された。
-また図\ref{fig:inactive}から図\ref{fig:active}への変化として、青(gprotein)コミュニティの再編成が起きていることと、赤(new)コミュニティが新規に形成されたことが挙げられる。
+またinactive状態からactive状態への変化として、青(gprotein)コミュニティの再編成が起きていることと、赤(new)コミュニティが新規に形成されたことが挙げられる。
 
-%青(gprotein)コミュニティと赤(new)コミュニティに属する残基の比較を行うと、以下のようになる。
+\begin{table}[!ht]
+  \centering
+  \caption{活性化に伴うコミュニティの再編成と、コミュニティを構成している残基群の比較}
+  \begin{tabular}{lll}
+    \hline
+    活性化に伴うコミュニティの再編成  & inactiveでの構成要素  & activeでの構成要素 \\
+    \hline 
+    青(gprotein)コミュニティの再編成  &  TM3,TM5,TM6の細胞質側残基  &  TM6の細胞質側残基、リガンド、6つの保存された結晶水
+    赤(new)コミュニティの新規形成  &  なし  & TM7,TM1,TM2の中間付近に位置する残基   \\ 
+  \end{tabular}
+  \label{tab:community_change}
+\end{table}
 
-%比較したtableを追加
-
-active状態になると、青(gprotein)コミュニティにはリガンドと保存された結晶水3つ、赤(new)コミュニティにはモチーフが追加された。
-%何のモチーフ
+青(gprotein)コミュニティの再編成が起きたのは、
+TM5の細胞質側がTM6から離れるように外側に動いたことで、
+もともと同じ青(gprotein)コミュニティに所属していたTM5,TM6が別々のコミュニティに分かれたためだと考えられる。
+しかしその独立したTM6の青(gprotein)コミュニティに、active状態に存在している保存された結晶水6つ全てとリガンドが含まれたことは興味深い結果であり、
+これと、赤(new)コミュニティの新規形成が、シグナル伝達経路にどう影響を与えるかは以後の分析で考察していくこととする。
 
 ここで、inactive状態とactive状態で示されているネットワークの全体密度を計算する。
 全体エッジ密度$D_{\text{global}}$の計算式は以下のように表される。
@@ -199,12 +211,13 @@ D_{\text{global}} = \frac{W_{\text{actual}}}{W_{\text{max}}}
 
 この式に基づいて、inactive構造とactive構造のネットワークの全体エッジ密度を計算すると、それぞれ以下のようになる。
 \begin{itemize}
-    \item inactive状態：\( Q = 0.3083 \)
+    \item inactive状態：\( Q = 0.3086 \)
     \item active状態：\( Q = :0.8579 \)
 \end{itemize}
 
-inactive状態は低い密度を示しており、最短距離が3\,\text{\AA}未満の残基ペアが相対的に少なかった。
-active状態は、inactive状態に比べて高い全体エッジ密度を持っており、より多くの相互作用が存在することを示している。この結果は、活性状態におけるタンパク質の構造や機能がより密接に結びついていることを示唆している。
+inactive状態の方がエッジ数、つまり最短距離が3\,\text{\AA}未満の残基ペアが多いにも関わらず、存在するエッジの重みの合計が小さかった。
+それに対しactive状態は、inactive状態に比べてエッジ数、つまり最短距離が3\,\text{\AA}未満の残基ペアが少ないにも関わらず、存在するエッジの重みの合計が大きく、高い全体エッジ密度となった。
+この結果は、active状態になると近接した残基ペアが増加し、タンパク質の構造がより密接にパッキングされることを示唆している。
 
 \subsection{コミュニティ内およびコミュニティ間のエッジ密度}
 active状態で再編成されたコミュニティや新しく検出されたコミュニティの役割を定量的に分析するために、ネットワークの全体密度$D_{\text{global}}$の計算で用いた密度の概念を用いたさらなる計算を行った。
@@ -384,6 +397,8 @@ global impact scoreの変化量が大きかったノードのうち、Zスコア
     \caption{Top 18 Nodes by Impact Score}
 \end{table}
 
+\newpage
+
 ここでCommunityの名称は、コミュニティ構造で名付けたものである。
 %Node typeの説明
 
@@ -426,7 +441,9 @@ community impact scoreが大きかったノードのうち、Zスコアが2以�
     \end{tabular}
     \caption{Top 22 Nodes by Impact Score}
 \end{table}
-    
+  
+\newpage
+
 22このうち18このノードがgproteinコミュニティもしくはloopコミュニティに属しており、活性化による構造変化が見られたTM5,TM6,TM7の細胞質側領域とICL3がここに含まれていることから、
 gproteinコミュニティとloopコミュニティに属する残基がコミュニティ内の重要な結束性に寄与している可能性があることが示唆された。
 また、上位4つを占めていた保存された結晶水は、inactive構造とactive構造の双方で共通の位置に存在していた結晶水であった。
