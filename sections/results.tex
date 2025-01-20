@@ -21,7 +21,7 @@
 %inactiveとactiveの重ね合わせ
 \begin{figure}[htbp]
   \centering
-  \begin{subfigure}{1.00\textwidth} % 各図の幅を調整
+  \begin{subfigure}{0.88\textwidth} % 各図の幅を調整
     \centering
     \includegraphics[width=\textwidth]{system-all-with-label.png}
     \caption{$\beta_2$ARのTM5,TM6,TM7の変化。}
@@ -41,7 +41,7 @@
 \newpage
 
 TM6の細胞質側末端にある残基の$\mathrm{C}_\alpha$原子が、TM7から離れる方向に12.9Å移動する様子が観察された。
-TM5の細胞質側末端部分は末端の$\mathrm{C}_\alpha$原子がTM6から離れる方向に3.3Å移動する様子が観察された。
+TM5の細胞質側末端部分は末端の$\mathrm{C}_\alpha$原子がTM3から離れる方向に3.3Å移動する様子が観察された。
 TM7の細胞質側末端にある残基の$\mathrm{C}_\alpha$原子が、タンパク質の内側に近づく方向に2.6Å移動する様子が観察された。
 TM5とTM6を結ぶ細胞内ループ3(ICL3)においても、Gタンパク質結合部位を開くように特定の方向に並んでいるような様子が観察された。
 
@@ -167,21 +167,27 @@ inactive状態とactive状態のモジュラリティ値はどちらも正の値
 \begin{table}[!ht]
   \centering
   \caption{活性化に伴うコミュニティの再編成と、コミュニティを構成している残基群の比較}
-  \begin{tabular}{lll}
-    \hline
-    活性化に伴うコミュニティの再編成  & inactiveでの構成要素  & activeでの構成要素 \\
-    \hline 
-    青(gprotein)コミュニティの再編成  &  TM3,TM5,TM6の細胞質側残基  &  TM6の細胞質側残基、リガンド、6つの保存された結晶水
-    赤(new)コミュニティの新規形成  &  なし  & TM7,TM1,TM2の中間付近に位置する残基   \\ 
-  \end{tabular}
+  \resizebox{\textwidth}{!}{
+    \begin{tabular}{lll}
+      \hline
+      活性化に伴うコミュニティの再編成  & inactiveでの構成要素  & activeでの構成要素 \\
+      \hline 
+      青(gprotein)コミュニティの再編成  &  TM3,TM5,TM6の細胞質側残基  &  TM6の細胞質側残基、リガンド、6つの保存された結晶水 \\
+      赤(new)コミュニティの新規形成  &  なし  & TM7,TM1,TM2の中間付近に位置する残基 \\ 
+    \end{tabular}
+  }
   \label{tab:community_change}
 \end{table}
 
 青(gprotein)コミュニティの再編成が起きたのは、
-TM5の細胞質側がTM6から離れるように外側に動いたことで、
-もともと同じ青(gprotein)コミュニティに所属していたTM5,TM6が別々のコミュニティに分かれたためだと考えられる。
+TM5,TM6の細胞質側がタンパク質の中心から離れるように外側に動いたことで、
+もともと同じ青(gprotein)コミュニティに所属していたTM3と別のコミュニティに分かれたためだと考えられる。
+実際にTM6の顕著な動きにより、TM5とTM6が協調して動くことが確認されている。
+%https://pubs.acs.org/doi/full/10.1021/jp506579a
 しかしその独立したTM6の青(gprotein)コミュニティに、active状態に存在している保存された結晶水6つ全てとリガンドが含まれたことは興味深い結果であり、
 これと、赤(new)コミュニティの新規形成が、シグナル伝達経路にどう影響を与えるかは以後の分析で考察していくこととする。
+%コミュニティが1つ増えることに言及はしているが、コミュニティの解析はしていない
+%https://pubs.acs.org/doi/full/10.1021/jp506579a
 
 ここで、inactive状態とactive状態で示されているネットワークの全体密度を計算する。
 全体エッジ密度$D_{\text{global}}$の計算式は以下のように表される。
@@ -211,8 +217,8 @@ D_{\text{global}} = \frac{W_{\text{actual}}}{W_{\text{max}}}
 
 この式に基づいて、inactive構造とactive構造のネットワークの全体エッジ密度を計算すると、それぞれ以下のようになる。
 \begin{itemize}
-    \item inactive状態：\( Q = 0.3086 \)
-    \item active状態：\( Q = :0.8579 \)
+    \item inactive状態：\( D = 0.3086 \)
+    \item active状態：\( D = :0.8579 \)
 \end{itemize}
 
 inactive状態の方がエッジ数、つまり最短距離が3\,\text{\AA}未満の残基ペアが多いにも関わらず、存在するエッジの重みの合計が小さかった。
@@ -347,7 +353,7 @@ inactive構造からactive構造へのコミュニティ間エッジ密度の変
 
 あるノードがactiveネットワーク全体または所属するコミュニティの接続性に与える影響を定量化に評価するために、impact scoreという変数を導入した。
 これは、特定のノードをactiveネットワークから削除した際に生じる全体エッジ密度とコミュニティ内エッジ密度の変化量を基に計算した。
-全体エッジ密度とコミュニティ内エッジ密度はそれぞれ前述の式(式 \ref{eq:global_density})と(式 \ref{eq:internal_density})に従っている。
+全体エッジ密度とコミュニティ内エッジ密度はそれぞれ前述の式に従っている。
 以降、全体エッジ密度の変化量をglobal impact score、コミュニティ内エッジ密度の変化量をcommunity impact scoreと表現する。
 
 また、global impact scoreとcommunity impact scoreについて、Zスコアを算出することで影響の大小を統計的に評価する。
