@@ -489,222 +489,173 @@
       \verb https://www.science.org/doi/abs/10.1126/science.1108595
       \endverb
     \endentry
-    \entry{Kornev2015}{article}{}{}
+    \entry{Hilser2007}{article}{}{}
       \name{author}{2}{}{%
-        {{hash=21ea206306e58233f2d1ede80af3fdb1}{%
-           family={Kornev},
-           familyi={K\bibinitperiod},
-           given={Alexandr\bibnamedelima P.},
-           giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
-        {{hash=83aed71585383f6cc6883e311c284298}{%
-           family={Taylor},
+        {{hash=6bbe58fe88769e94a168f4388ac9fbfe}{%
+           family={Hilser},
+           familyi={H\bibinitperiod},
+           given={Vincent\bibnamedelima J.},
+           giveni={V\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=7f3db2285e45ce5f7c22eaa5c28e02d9}{%
+           family={Thompson},
            familyi={T\bibinitperiod},
-           given={Susan\bibnamedelima S.},
-           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+           given={E.\bibnamedelimi Brad},
+           giveni={E\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
       }
-      \strng{namehash}{0fe5e4baad6d39965f06e569f28f7191}
-      \strng{fullhash}{0fe5e4baad6d39965f06e569f28f7191}
-      \strng{fullhashraw}{0fe5e4baad6d39965f06e569f28f7191}
-      \strng{bibnamehash}{0fe5e4baad6d39965f06e569f28f7191}
-      \strng{authorbibnamehash}{0fe5e4baad6d39965f06e569f28f7191}
-      \strng{authornamehash}{0fe5e4baad6d39965f06e569f28f7191}
-      \strng{authorfullhash}{0fe5e4baad6d39965f06e569f28f7191}
-      \strng{authorfullhashraw}{0fe5e4baad6d39965f06e569f28f7191}
+      \strng{namehash}{135f211b4a0e1f7672dec264d2bab2f5}
+      \strng{fullhash}{135f211b4a0e1f7672dec264d2bab2f5}
+      \strng{fullhashraw}{135f211b4a0e1f7672dec264d2bab2f5}
+      \strng{bibnamehash}{135f211b4a0e1f7672dec264d2bab2f5}
+      \strng{authorbibnamehash}{135f211b4a0e1f7672dec264d2bab2f5}
+      \strng{authornamehash}{135f211b4a0e1f7672dec264d2bab2f5}
+      \strng{authorfullhash}{135f211b4a0e1f7672dec264d2bab2f5}
+      \strng{authorfullhashraw}{135f211b4a0e1f7672dec264d2bab2f5}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{\textit{Trends Biochem. Sci.}}
-      \field{number}{11}
-      \field{title}{Dynamics-Driven Allostery in Protein Kinases}
-      \field{volume}{\textit{40}}
-      \field{year}{\textbf{2015}}
-      \field{pages}{628\bibrangedash 647}
-      \range{pages}{20}
+      \field{journaltitle}{\textit{Proceedings of the National Academy of Sciences}}
+      \field{number}{20}
+      \field{title}{Intrinsic disorder as a mechanism to optimize allosteric coupling in proteins}
+      \field{volume}{\textit{104}}
+      \field{year}{\textbf{2007}}
+      \field{pages}{8311\bibrangedash 8315}
+      \range{pages}{5}
       \verb{urlraw}
-      \verb https://www.cell.com/trends/biochemical-sciences/abstract/S0968-0004(15)00166-8
+      \verb https://doi.org/10.1073/pnas.0700329104
       \endverb
       \verb{url}
-      \verb https://www.cell.com/trends/biochemical-sciences/abstract/S0968-0004(15)00166-8
+      \verb https://doi.org/10.1073/pnas.0700329104
       \endverb
     \endentry
-    \entry{delSol2009}{article}{}{}
-      \name{author}{4}{}{%
-        {{hash=b217aa7bee35972a56775ceace416f5c}{%
-           family={Sol},
-           familyi={S\bibinitperiod},
-           given={Antonio},
-           giveni={A\bibinitperiod},
-           prefix={del},
-           prefixi={d\bibinitperiod}}}%
-        {{hash=461543ef75153964f4470988a523a85b}{%
-           family={Tsai},
-           familyi={T\bibinitperiod},
-           given={Chung-Jung},
-           giveni={C\bibinithyphendelim J\bibinitperiod}}}%
-        {{hash=cdbd829290aac4452bad6ad432b8f3b7}{%
-           family={Ma},
-           familyi={M\bibinitperiod},
-           given={Buyong},
-           giveni={B\bibinitperiod}}}%
-        {{hash=5df4f003753b6d9cfad61f047a6dab01}{%
-           family={Nussinov},
-           familyi={N\bibinitperiod},
-           given={Ruth},
-           giveni={R\bibinitperiod}}}%
-      }
-      \strng{namehash}{1f5c5983ebe1628c8356b2de2e50be72}
-      \strng{fullhash}{cade80f1d983b19abe3a5a9f00ae025e}
-      \strng{fullhashraw}{cade80f1d983b19abe3a5a9f00ae025e}
-      \strng{bibnamehash}{cade80f1d983b19abe3a5a9f00ae025e}
-      \strng{authorbibnamehash}{cade80f1d983b19abe3a5a9f00ae025e}
-      \strng{authornamehash}{1f5c5983ebe1628c8356b2de2e50be72}
-      \strng{authorfullhash}{cade80f1d983b19abe3a5a9f00ae025e}
-      \strng{authorfullhashraw}{cade80f1d983b19abe3a5a9f00ae025e}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{\textit{Sci. Direct}}
-      \field{number}{8}
-      \field{title}{The Origin of Allosteric Functional Modulation: Multiple Pre-existing Pathways}
-      \field{volume}{\textit{17}}
-      \field{year}{\textbf{2009}}
-      \field{pages}{1042\bibrangedash 1050}
-      \range{pages}{9}
-      \verb{urlraw}
-      \verb https://www.sciencedirect.com/science/article/pii/S0969212609002500?via%3Dihub
-      \endverb
-      \verb{url}
-      \verb https://www.sciencedirect.com/science/article/pii/S0969212609002500?via%3Dihub
-      \endverb
-    \endentry
-    \entry{Fenton2008}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=d9f72c9f0fef915f1c35766923b9619d}{%
-           family={Fenton},
-           familyi={F\bibinitperiod},
-           given={Aron\bibnamedelima W.},
-           giveni={A\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
-      }
-      \strng{namehash}{d9f72c9f0fef915f1c35766923b9619d}
-      \strng{fullhash}{d9f72c9f0fef915f1c35766923b9619d}
-      \strng{fullhashraw}{d9f72c9f0fef915f1c35766923b9619d}
-      \strng{bibnamehash}{d9f72c9f0fef915f1c35766923b9619d}
-      \strng{authorbibnamehash}{d9f72c9f0fef915f1c35766923b9619d}
-      \strng{authornamehash}{d9f72c9f0fef915f1c35766923b9619d}
-      \strng{authorfullhash}{d9f72c9f0fef915f1c35766923b9619d}
-      \strng{authorfullhashraw}{d9f72c9f0fef915f1c35766923b9619d}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{\textit{Trends Biochem. Sci.}}
-      \field{number}{9}
-      \field{title}{Allostery: an illustrated definition for the ‘second secret of life’}
-      \field{volume}{\textit{33}}
-      \field{year}{\textbf{2008}}
-      \field{pages}{420\bibrangedash 425}
-      \range{pages}{6}
-      \verb{urlraw}
-      \verb https://www.sciencedirect.com/science/article/abs/pii/S0968000408001643
-      \endverb
-      \verb{url}
-      \verb https://www.sciencedirect.com/science/article/abs/pii/S0968000408001643
-      \endverb
-    \endentry
-    \entry{Blondel2008}{article}{}{}
-      \name{author}{4}{}{%
-        {{hash=7c4ebd50451e5b718eb3d5ad6cfbad71}{%
-           family={Blondel},
-           familyi={B\bibinitperiod},
-           given={Vincent\bibnamedelima D.},
-           giveni={V\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-        {{hash=6b6e1859f5b4504b6f852c6112880f18}{%
-           family={Guillaume},
-           familyi={G\bibinitperiod},
-           given={Jean-Loup},
-           giveni={J\bibinithyphendelim L\bibinitperiod}}}%
-        {{hash=a0bc3d83c54bda6a078936b2d87d6c9f}{%
-           family={Lambiotte},
-           familyi={L\bibinitperiod},
-           given={Renaud},
-           giveni={R\bibinitperiod}}}%
-        {{hash=78c7291a964edd655c49fdec8099ab3e}{%
-           family={Lefebvre},
-           familyi={L\bibinitperiod},
-           given={Etienne},
-           giveni={E\bibinitperiod}}}%
-      }
-      \strng{namehash}{9f3235a1f0c5640347922a746d86f9f3}
-      \strng{fullhash}{6ef1b75c96dd583dc19da75ac0cb7d23}
-      \strng{fullhashraw}{6ef1b75c96dd583dc19da75ac0cb7d23}
-      \strng{bibnamehash}{6ef1b75c96dd583dc19da75ac0cb7d23}
-      \strng{authorbibnamehash}{6ef1b75c96dd583dc19da75ac0cb7d23}
-      \strng{authornamehash}{9f3235a1f0c5640347922a746d86f9f3}
-      \strng{authorfullhash}{6ef1b75c96dd583dc19da75ac0cb7d23}
-      \strng{authorfullhashraw}{6ef1b75c96dd583dc19da75ac0cb7d23}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{\textit{J. Stat. Mech.}}
-      \field{number}{10}
-      \field{title}{Fast unfolding of communities in large networks}
-      \field{volume}{\textit{2008}}
-      \field{year}{2008}
-      \field{pages}{P10008}
-      \range{pages}{-1}
-      \verb{urlraw}
-      \verb https://iopscience.iop.org/article/10.1088/1742-5468/2008/10/P10008/meta?casa_token=gUnIfMpEgFUAAAAA:CzncxXVCSbFF0gBux5xGhAWMnQDOio3eBOyMY8VDngPf7-LFexsnOz5gan6uHE0dlL7JrLJQAdwuwauUSrrCsmDHg0g
-      \endverb
-      \verb{url}
-      \verb https://iopscience.iop.org/article/10.1088/1742-5468/2008/10/P10008/meta?casa_token=gUnIfMpEgFUAAAAA:CzncxXVCSbFF0gBux5xGhAWMnQDOio3eBOyMY8VDngPf7-LFexsnOz5gan6uHE0dlL7JrLJQAdwuwauUSrrCsmDHg0g
-      \endverb
-    \endentry
-    \entry{Angel2009}{article}{}{}
+    \entry{Pan2000}{article}{}{}
       \name{author}{3}{}{%
-        {{hash=975b07c9a5fb2ffe4c1c5a588d24da11}{%
-           family={Angel},
-           familyi={A\bibinitperiod},
-           given={Thomas\bibnamedelima E.},
-           giveni={T\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
-        {{hash=d6799e6f67e6e222082a49b5653bf331}{%
-           family={Chance},
-           familyi={C\bibinitperiod},
-           given={Mark\bibnamedelima R.},
-           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
-        {{hash=673b0f5d52008ad1441686dd78512e9a}{%
-           family={Palczewski},
+        {{hash=613367790a82ec69f910eb9c4d53f878}{%
+           family={Pan},
            familyi={P\bibinitperiod},
-           given={Krzysztof},
-           giveni={K\bibinitperiod}}}%
+           given={Hong},
+           giveni={H\bibinitperiod}}}%
+        {{hash=ad45921f396912700ec5fe972c9e78e9}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={J.\bibnamedelimi Ching},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=6bbe58fe88769e94a168f4388ac9fbfe}{%
+           family={Hilser},
+           familyi={H\bibinitperiod},
+           given={Vincent\bibnamedelima J.},
+           giveni={V\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
       }
-      \strng{namehash}{aee6f9c3cdfe8ae3b459962c3a7ffae8}
-      \strng{fullhash}{6e03d5eaa7d934e4de567d8a45f61fc5}
-      \strng{fullhashraw}{6e03d5eaa7d934e4de567d8a45f61fc5}
-      \strng{bibnamehash}{6e03d5eaa7d934e4de567d8a45f61fc5}
-      \strng{authorbibnamehash}{6e03d5eaa7d934e4de567d8a45f61fc5}
-      \strng{authornamehash}{aee6f9c3cdfe8ae3b459962c3a7ffae8}
-      \strng{authorfullhash}{6e03d5eaa7d934e4de567d8a45f61fc5}
-      \strng{authorfullhashraw}{6e03d5eaa7d934e4de567d8a45f61fc5}
-      \field{extraname}{1}
+      \strng{namehash}{bf86cc279d6542e16e643ba59c986cf3}
+      \strng{fullhash}{0d76256e7fe684ecc9df7289049efca4}
+      \strng{fullhashraw}{0d76256e7fe684ecc9df7289049efca4}
+      \strng{bibnamehash}{0d76256e7fe684ecc9df7289049efca4}
+      \strng{authorbibnamehash}{0d76256e7fe684ecc9df7289049efca4}
+      \strng{authornamehash}{bf86cc279d6542e16e643ba59c986cf3}
+      \strng{authorfullhash}{0d76256e7fe684ecc9df7289049efca4}
+      \strng{authorfullhashraw}{0d76256e7fe684ecc9df7289049efca4}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{\textit{Proc. Natl. Acad. Sci.}}
-      \field{number}{21}
-      \field{title}{Conserved waters mediate structural and functional activation of family A (rhodopsin-like) G protein-coupled receptors}
-      \field{volume}{\textit{106}}
-      \field{year}{2009}
-      \field{pages}{8555\bibrangedash 8560}
+      \field{journaltitle}{\textit{Proceedings of the National Academy of Sciences}}
+      \field{number}{22}
+      \field{title}{Binding sites in \textit{Escherichia coli} dihydrofolate reductase communicate by modulating the conformational ensemble}
+      \field{volume}{\textit{97}}
+      \field{year}{\textbf{2000}}
+      \field{pages}{12020\bibrangedash 12025}
       \range{pages}{6}
       \verb{urlraw}
-      \verb https://www.pnas.org/doi/10.1073/pnas.0903545106
+      \verb https://doi.org/10.1073/pnas.220240297
       \endverb
       \verb{url}
-      \verb https://www.pnas.org/doi/10.1073/pnas.0903545106
+      \verb https://doi.org/10.1073/pnas.220240297
+      \endverb
+    \endentry
+    \entry{Ishikura2015}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=a3c295521867bb64c73591a914e84178}{%
+           family={Ishikura},
+           familyi={I\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=24b65f8486aa0f77520d19dd292f754c}{%
+           family={Iwata},
+           familyi={I\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=cf1be8f5096b0ce2184911bd562aaeb2}{%
+           family={Hatano},
+           familyi={H\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=b7e1f402f4724bb6cda6e5dd80720827}{%
+           family={Yamato},
+           familyi={Y\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{2cab7879017cb4cf07f5b0f97dadda39}
+      \strng{fullhash}{13289017077d7adeb32e381467d11e57}
+      \strng{fullhashraw}{13289017077d7adeb32e381467d11e57}
+      \strng{bibnamehash}{13289017077d7adeb32e381467d11e57}
+      \strng{authorbibnamehash}{13289017077d7adeb32e381467d11e57}
+      \strng{authornamehash}{2cab7879017cb4cf07f5b0f97dadda39}
+      \strng{authorfullhash}{13289017077d7adeb32e381467d11e57}
+      \strng{authorfullhashraw}{13289017077d7adeb32e381467d11e57}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{\textit{Journal of Computational Chemistry}}
+      \field{number}{22}
+      \field{title}{Energy exchange network of inter-residue interactions within a thermally fluctuating protein molecule: A computational study}
+      \field{volume}{\textit{36}}
+      \field{year}{\textbf{2015}}
+      \field{pages}{1709\bibrangedash 1718}
+      \range{pages}{10}
+      \verb{urlraw}
+      \verb https://doi.org/10.1002/jcc.23989
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1002/jcc.23989
+      \endverb
+    \endentry
+    \entry{Wang2024}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=f0abd6f8e366f425bbee25995d133a41}{%
+           family={T.\bibnamedelimi Wang},
+           familyi={T\bibinitperiod\bibinitdelim W\bibinitperiod},
+           given={T.\bibnamedelimi Yamato},
+           giveni={T\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=0a33fb899c828ff0740147a982f5ce22}{%
+           family={Sugiura},
+           familyi={S\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{dd90594e2ab8495259ff43ec8db47726}
+      \strng{fullhash}{dd90594e2ab8495259ff43ec8db47726}
+      \strng{fullhashraw}{dd90594e2ab8495259ff43ec8db47726}
+      \strng{bibnamehash}{dd90594e2ab8495259ff43ec8db47726}
+      \strng{authorbibnamehash}{dd90594e2ab8495259ff43ec8db47726}
+      \strng{authornamehash}{dd90594e2ab8495259ff43ec8db47726}
+      \strng{authorfullhash}{dd90594e2ab8495259ff43ec8db47726}
+      \strng{authorfullhashraw}{dd90594e2ab8495259ff43ec8db47726}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{\textit{The Journal of Physical Chemistry B}}
+      \field{number}{36}
+      \field{title}{Thermal Energy Transport through Nonbonded Native Contacts in Protein}
+      \field{volume}{\textit{128}}
+      \field{year}{\textbf{2024}}
+      \verb{urlraw}
+      \verb https://pubs.acs.org/doi/full/10.1021/acs.jpcb.4c03475?casa_token=kIrJZ9z3XmoAAAAA%3AdCe19514PuUO6o1nBQVelnZulU8CeElXxLuO5_ugsWtic1wHX1ucufyBTAiRsAKwQ-9gSQxdEWGIOJI
+      \endverb
+      \verb{url}
+      \verb https://pubs.acs.org/doi/full/10.1021/acs.jpcb.4c03475?casa_token=kIrJZ9z3XmoAAAAA%3AdCe19514PuUO6o1nBQVelnZulU8CeElXxLuO5_ugsWtic1wHX1ucufyBTAiRsAKwQ-9gSQxdEWGIOJI
       \endverb
     \endentry
     \entry{cherezov2007}{article}{}{}
@@ -931,8 +882,8 @@
       \strng{authornamehash}{8b721385c16f9c6adf8e3776ddc77744}
       \strng{authorfullhash}{5d5ed8948b772939b1fd5e2504793ab4}
       \strng{authorfullhashraw}{5d5ed8948b772939b1fd5e2504793ab4}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{\textit{J. Biol. Chem.}}
@@ -985,8 +936,8 @@
       \strng{authornamehash}{9a21a606a0d4bc6b985b09cba4c0a98f}
       \strng{authorfullhash}{769a0e842ed0f4300273c6cc152b06d2}
       \strng{authorfullhashraw}{769a0e842ed0f4300273c6cc152b06d2}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{\textit{Trends Pharmacol. Sci.}}
@@ -1029,8 +980,8 @@
       \strng{authornamehash}{52f24aa0d0b898ac2546a39a1afe191b}
       \strng{authorfullhash}{deef75b2a4ad0064c4feda1fe8764887}
       \strng{authorfullhashraw}{deef75b2a4ad0064c4feda1fe8764887}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{\textit{Proteins: Structure, Function, and Bioinformatics}}
@@ -1073,7 +1024,6 @@
       \strng{authornamehash}{aee6f9c3cdfe8ae3b459962c3a7ffae8}
       \strng{authorfullhash}{6e03d5eaa7d934e4de567d8a45f61fc5}
       \strng{authorfullhashraw}{6e03d5eaa7d934e4de567d8a45f61fc5}
-      \field{extraname}{2}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
@@ -1134,6 +1084,55 @@
       \endverb
       \verb{url}
       \verb https://pubs.acs.org/doi/10.1021/acs.jpclett.5b02514
+      \endverb
+    \endentry
+    \entry{Blondel2008}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=7c4ebd50451e5b718eb3d5ad6cfbad71}{%
+           family={Blondel},
+           familyi={B\bibinitperiod},
+           given={Vincent\bibnamedelima D.},
+           giveni={V\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=6b6e1859f5b4504b6f852c6112880f18}{%
+           family={Guillaume},
+           familyi={G\bibinitperiod},
+           given={Jean-Loup},
+           giveni={J\bibinithyphendelim L\bibinitperiod}}}%
+        {{hash=a0bc3d83c54bda6a078936b2d87d6c9f}{%
+           family={Lambiotte},
+           familyi={L\bibinitperiod},
+           given={Renaud},
+           giveni={R\bibinitperiod}}}%
+        {{hash=78c7291a964edd655c49fdec8099ab3e}{%
+           family={Lefebvre},
+           familyi={L\bibinitperiod},
+           given={Etienne},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{9f3235a1f0c5640347922a746d86f9f3}
+      \strng{fullhash}{6ef1b75c96dd583dc19da75ac0cb7d23}
+      \strng{fullhashraw}{6ef1b75c96dd583dc19da75ac0cb7d23}
+      \strng{bibnamehash}{6ef1b75c96dd583dc19da75ac0cb7d23}
+      \strng{authorbibnamehash}{6ef1b75c96dd583dc19da75ac0cb7d23}
+      \strng{authornamehash}{9f3235a1f0c5640347922a746d86f9f3}
+      \strng{authorfullhash}{6ef1b75c96dd583dc19da75ac0cb7d23}
+      \strng{authorfullhashraw}{6ef1b75c96dd583dc19da75ac0cb7d23}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{\textit{J. Stat. Mech.}}
+      \field{number}{10}
+      \field{title}{Fast unfolding of communities in large networks}
+      \field{volume}{\textit{2008}}
+      \field{year}{2008}
+      \field{pages}{P10008}
+      \range{pages}{-1}
+      \verb{urlraw}
+      \verb https://iopscience.iop.org/article/10.1088/1742-5468/2008/10/P10008/meta?casa_token=gUnIfMpEgFUAAAAA:CzncxXVCSbFF0gBux5xGhAWMnQDOio3eBOyMY8VDngPf7-LFexsnOz5gan6uHE0dlL7JrLJQAdwuwauUSrrCsmDHg0g
+      \endverb
+      \verb{url}
+      \verb https://iopscience.iop.org/article/10.1088/1742-5468/2008/10/P10008/meta?casa_token=gUnIfMpEgFUAAAAA:CzncxXVCSbFF0gBux5xGhAWMnQDOio3eBOyMY8VDngPf7-LFexsnOz5gan6uHE0dlL7JrLJQAdwuwauUSrrCsmDHg0g
       \endverb
     \endentry
     \entry{rasmussen2011crystal}{article}{}{}
