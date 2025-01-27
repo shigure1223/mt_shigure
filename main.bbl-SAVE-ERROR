@@ -621,43 +621,6 @@
       \verb https://doi.org/10.1002/jcc.23989
       \endverb
     \endentry
-    \entry{Wang2024}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=f0abd6f8e366f425bbee25995d133a41}{%
-           family={T.\bibnamedelimi Wang},
-           familyi={T\bibinitperiod\bibinitdelim W\bibinitperiod},
-           given={T.\bibnamedelimi Yamato},
-           giveni={T\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
-        {{hash=0a33fb899c828ff0740147a982f5ce22}{%
-           family={Sugiura},
-           familyi={S\bibinitperiod},
-           given={W.},
-           giveni={W\bibinitperiod}}}%
-      }
-      \strng{namehash}{dd90594e2ab8495259ff43ec8db47726}
-      \strng{fullhash}{dd90594e2ab8495259ff43ec8db47726}
-      \strng{fullhashraw}{dd90594e2ab8495259ff43ec8db47726}
-      \strng{bibnamehash}{dd90594e2ab8495259ff43ec8db47726}
-      \strng{authorbibnamehash}{dd90594e2ab8495259ff43ec8db47726}
-      \strng{authornamehash}{dd90594e2ab8495259ff43ec8db47726}
-      \strng{authorfullhash}{dd90594e2ab8495259ff43ec8db47726}
-      \strng{authorfullhashraw}{dd90594e2ab8495259ff43ec8db47726}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{\textit{The Journal of Physical Chemistry B}}
-      \field{number}{36}
-      \field{title}{Thermal Energy Transport through Nonbonded Native Contacts in Protein}
-      \field{volume}{\textit{128}}
-      \field{year}{\textbf{2024}}
-      \verb{urlraw}
-      \verb https://pubs.acs.org/doi/full/10.1021/acs.jpcb.4c03475?casa_token=kIrJZ9z3XmoAAAAA%3AdCe19514PuUO6o1nBQVelnZulU8CeElXxLuO5_ugsWtic1wHX1ucufyBTAiRsAKwQ-9gSQxdEWGIOJI
-      \endverb
-      \verb{url}
-      \verb https://pubs.acs.org/doi/full/10.1021/acs.jpcb.4c03475?casa_token=kIrJZ9z3XmoAAAAA%3AdCe19514PuUO6o1nBQVelnZulU8CeElXxLuO5_ugsWtic1wHX1ucufyBTAiRsAKwQ-9gSQxdEWGIOJI
-      \endverb
-    \endentry
     \entry{cherezov2007}{article}{}{}
       \name{author}{10}{}{%
         {{hash=1a3634310c3b2b06eb166770ab5dda0e}{%
@@ -727,7 +690,7 @@
       \field{number}{5854}
       \field{title}{High-Resolution Crystal Structure of an Engineered Human β2-Adrenergic G Protein–Coupled Receptor}
       \field{volume}{\textit{318}}
-      \field{year}{2007}
+      \field{year}{\textbf{2007}}
       \field{pages}{1258\bibrangedash 1265}
       \range{pages}{8}
       \verb{urlraw}
@@ -846,7 +809,7 @@
       \field{journaltitle}{\textit{Nature}}
       \field{title}{Structure of a nanobody-stabilized active state of the β2 adrenoceptor}
       \field{volume}{\textit{469}}
-      \field{year}{2011}
+      \field{year}{\textbf{2011}}
       \field{pages}{175\bibrangedash 180}
       \range{pages}{6}
       \verb{urlraw}
@@ -890,7 +853,7 @@
       \field{number}{26}
       \field{title}{Signaling through a G Protein-coupled Receptor and Its Corresponding G Protein Follows a Stoichiometrically Limited Model}
       \field{volume}{\textit{282}}
-      \field{year}{2007}
+      \field{year}{\textbf{2007}}
       \field{pages}{19203\bibrangedash 19216}
       \range{pages}{14}
       \verb{urlraw}
@@ -944,7 +907,7 @@
       \field{number}{5}
       \field{title}{Ligand binding and micro-switches in 7TM receptor structures}
       \field{volume}{\textit{30}}
-      \field{year}{2009}
+      \field{year}{\textbf{2009}}
       \field{pages}{249\bibrangedash 259}
       \range{pages}{11}
       \verb{urlraw}
@@ -988,7 +951,7 @@
       \field{number}{5}
       \field{title}{Mapping the intramolecular signal transduction of G-protein coupled receptors}
       \field{volume}{\textit{82}}
-      \field{year}{2014}
+      \field{year}{\textbf{2014}}
       \field{pages}{727\bibrangedash 743}
       \range{pages}{17}
       \verb{urlraw}
@@ -1024,15 +987,15 @@
       \strng{authornamehash}{aee6f9c3cdfe8ae3b459962c3a7ffae8}
       \strng{authorfullhash}{6e03d5eaa7d934e4de567d8a45f61fc5}
       \strng{authorfullhashraw}{6e03d5eaa7d934e4de567d8a45f61fc5}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{\textit{Proceedings of the National Academy of Sciences}}
       \field{number}{21}
       \field{title}{Conserved waters mediate structural and functional activation of family A (rhodopsin-like) G protein-coupled receptors}
       \field{volume}{\textit{106}}
-      \field{year}{2009}
+      \field{year}{\textbf{2009}}
       \field{pages}{8555\bibrangedash 8560}
       \range{pages}{6}
       \verb{urlraw}
@@ -1040,6 +1003,165 @@
       \endverb
       \verb{url}
       \verb https://www.pnas.org/doi/10.1073/pnas.0903545106
+      \endverb
+    \endentry
+    \entry{Sali1995}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=33bfc9425fa0272e671f91a238d65d34}{%
+           family={Šali},
+           familyi={Š\bibinitperiod},
+           given={Andrej},
+           giveni={A\bibinitperiod}}}%
+        {{hash=1bfe8acc802e6d10dd0149b84dbbbdfb}{%
+           family={Potterton},
+           familyi={P\bibinitperiod},
+           given={Liz},
+           giveni={L\bibinitperiod}}}%
+        {{hash=92e681542c75b8b3c9f06eddc579ac9e}{%
+           family={Yuan},
+           familyi={Y\bibinitperiod},
+           given={Feng},
+           giveni={F\bibinitperiod}}}%
+        {{hash=78c12f6372049eba524275d3acb0b36e}{%
+           family={Vlijmen},
+           familyi={V\bibinitperiod},
+           given={Herman},
+           giveni={H\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=5743d79be0ffa377a441f1fe37a0d8cd}{%
+           family={Karplus},
+           familyi={K\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{9cac2aad892b7d1fb3a4beb53e6f1411}
+      \strng{fullhash}{f4ff9477f1669197a33e239502beb918}
+      \strng{fullhashraw}{f4ff9477f1669197a33e239502beb918}
+      \strng{bibnamehash}{f4ff9477f1669197a33e239502beb918}
+      \strng{authorbibnamehash}{f4ff9477f1669197a33e239502beb918}
+      \strng{authornamehash}{9cac2aad892b7d1fb3a4beb53e6f1411}
+      \strng{authorfullhash}{f4ff9477f1669197a33e239502beb918}
+      \strng{authorfullhashraw}{f4ff9477f1669197a33e239502beb918}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{\textit{Proteins: Structure, Function, and Bioinformatics}}
+      \field{number}{3}
+      \field{title}{Evaluation of comparative protein modeling by MODELLER}
+      \field{volume}{\textit{23}}
+      \field{year}{\textbf{1995}}
+      \field{pages}{318\bibrangedash 326}
+      \range{pages}{9}
+      \verb{urlraw}
+      \verb https://doi.org/10.1002/prot.340230306
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1002/prot.340230306
+      \endverb
+    \endentry
+    \entry{Zhang1996}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=32a08717e0d6dcde59bc98b96800ed6c}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Li},
+           giveni={L\bibinitperiod}}}%
+        {{hash=140c88a934dd76d511401dac370e0ff0}{%
+           family={Hermans},
+           familyi={H\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{c50b1093b43342220dff446d6a74ef23}
+      \strng{fullhash}{c50b1093b43342220dff446d6a74ef23}
+      \strng{fullhashraw}{c50b1093b43342220dff446d6a74ef23}
+      \strng{bibnamehash}{c50b1093b43342220dff446d6a74ef23}
+      \strng{authorbibnamehash}{c50b1093b43342220dff446d6a74ef23}
+      \strng{authornamehash}{c50b1093b43342220dff446d6a74ef23}
+      \strng{authorfullhash}{c50b1093b43342220dff446d6a74ef23}
+      \strng{authorfullhashraw}{c50b1093b43342220dff446d6a74ef23}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{\textit{Proteins: Structure, Function, and Bioinformatics}}
+      \field{number}{4}
+      \field{title}{Hydrophilicity of cavities in proteins}
+      \field{volume}{\textit{24}}
+      \field{year}{\textbf{1996}}
+      \field{pages}{433\bibrangedash 438}
+      \range{pages}{6}
+      \verb{urlraw}
+      \verb https://doi.org/10.1002/(SICI)1097-0134(199604)24:4%3C433::AID-PROT3%3E3.0.CO%3B2-F
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1002/(SICI)1097-0134(199604)24:4%3C433::AID-PROT3%3E3.0.CO%3B2-F
+      \endverb
+    \endentry
+    \entry{CHARMMGUI}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=1468503f1cced106a6fa67c6b046698e}{%
+           family={CHARMM-GUI},
+           familyi={C\bibinithyphendelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{1468503f1cced106a6fa67c6b046698e}
+      \strng{fullhash}{1468503f1cced106a6fa67c6b046698e}
+      \strng{fullhashraw}{1468503f1cced106a6fa67c6b046698e}
+      \strng{bibnamehash}{1468503f1cced106a6fa67c6b046698e}
+      \strng{authorbibnamehash}{1468503f1cced106a6fa67c6b046698e}
+      \strng{authornamehash}{1468503f1cced106a6fa67c6b046698e}
+      \strng{authorfullhash}{1468503f1cced106a6fa67c6b046698e}
+      \strng{authorfullhashraw}{1468503f1cced106a6fa67c6b046698e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{CHARMM-GUI: A Web-Based Interface to Molecular Simulations}
+      \field{year}{n.d.}
+      \verb{urlraw}
+      \verb http://www.charmm-gui.org
+      \endverb
+      \verb{url}
+      \verb http://www.charmm-gui.org
+      \endverb
+    \endentry
+    \entry{Wang2024}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=f0abd6f8e366f425bbee25995d133a41}{%
+           family={T.\bibnamedelimi Wang},
+           familyi={T\bibinitperiod\bibinitdelim W\bibinitperiod},
+           given={T.\bibnamedelimi Yamato},
+           giveni={T\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=0a33fb899c828ff0740147a982f5ce22}{%
+           family={Sugiura},
+           familyi={S\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{dd90594e2ab8495259ff43ec8db47726}
+      \strng{fullhash}{dd90594e2ab8495259ff43ec8db47726}
+      \strng{fullhashraw}{dd90594e2ab8495259ff43ec8db47726}
+      \strng{bibnamehash}{dd90594e2ab8495259ff43ec8db47726}
+      \strng{authorbibnamehash}{dd90594e2ab8495259ff43ec8db47726}
+      \strng{authornamehash}{dd90594e2ab8495259ff43ec8db47726}
+      \strng{authorfullhash}{dd90594e2ab8495259ff43ec8db47726}
+      \strng{authorfullhashraw}{dd90594e2ab8495259ff43ec8db47726}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{\textit{The Journal of Physical Chemistry B}}
+      \field{number}{36}
+      \field{title}{Thermal Energy Transport through Nonbonded Native Contacts in Protein}
+      \field{volume}{\textit{128}}
+      \field{year}{\textbf{2024}}
+      \verb{urlraw}
+      \verb https://pubs.acs.org/doi/full/10.1021/acs.jpcb.4c03475?casa_token=kIrJZ9z3XmoAAAAA%3AdCe19514PuUO6o1nBQVelnZulU8CeElXxLuO5_ugsWtic1wHX1ucufyBTAiRsAKwQ-9gSQxdEWGIOJI
+      \endverb
+      \verb{url}
+      \verb https://pubs.acs.org/doi/full/10.1021/acs.jpcb.4c03475?casa_token=kIrJZ9z3XmoAAAAA%3AdCe19514PuUO6o1nBQVelnZulU8CeElXxLuO5_ugsWtic1wHX1ucufyBTAiRsAKwQ-9gSQxdEWGIOJI
       \endverb
     \endentry
     \entry{Blondel2008}{article}{}{}
@@ -1081,7 +1203,7 @@
       \field{number}{10}
       \field{title}{Fast unfolding of communities in large networks}
       \field{volume}{\textit{2008}}
-      \field{year}{2008}
+      \field{year}{\textbf{2008}}
       \field{pages}{P10008}
       \range{pages}{-1}
       \verb{urlraw}
@@ -1210,7 +1332,7 @@
       \field{journaltitle}{\textit{Nature}}
       \field{title}{Crystal structure of the β2 adrenergic receptor–Gs protein complex}
       \field{volume}{\textit{477}}
-      \field{year}{2011}
+      \field{year}{\textbf{2011}}
       \field{pages}{549\bibrangedash 555}
       \range{pages}{7}
       \verb{urlraw}
@@ -1249,7 +1371,7 @@
       \field{number}{24}
       \field{title}{Activation-Induced Reorganization of Energy Transport Networks in the β2 Adrenergic Receptor}
       \field{volume}{\textit{125}}
-      \field{year}{2021}
+      \field{year}{\textbf{2021}}
       \field{pages}{6490\bibrangedash 6498}
       \range{pages}{9}
       \verb{urlraw}
@@ -1303,7 +1425,7 @@
       \field{number}{16}
       \field{title}{Computational Study on the Thermal Conductivity of a Protein}
       \field{volume}{\textit{126}}
-      \field{year}{2022}
+      \field{year}{\textbf{2022}}
       \field{pages}{3489\bibrangedash 3495}
       \range{pages}{7}
       \verb{urlraw}
@@ -1352,7 +1474,7 @@
       \field{number}{8}
       \field{title}{Uncovering allosteric pathways in caspase-1 using Markov transient analysis and multiscale community detection}
       \field{volume}{\textit{10}}
-      \field{year}{2014}
+      \field{year}{\textbf{2014}}
       \field{pages}{2247\bibrangedash 2258}
       \range{pages}{12}
       \verb{urlraw}
